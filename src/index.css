@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Jua';
+    src: url(../public/Jua-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Dongle';
+    src: url(../public/Dongle-Regular.ttf);
+}

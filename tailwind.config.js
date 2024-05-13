@@ -6,7 +6,15 @@ export default {
 		"./node_modules/flowbite/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'Jua' : ['Jua'],
+        'Dongle' : ['Dongle'],
+      },
+      colors: {
+        'kakao-yellow' : '#FEE500',
+      }
+    },
   },
   plugins: [],
 }
