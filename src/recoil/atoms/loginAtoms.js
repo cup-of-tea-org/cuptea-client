@@ -7,3 +7,8 @@ export const loginDescTextAtom = atom({
         text2: 'CupTea와 함께'
 }
 })
+
+// export const isLoginAtom = atom({
+//     key: 'isLoginAtom',
+//     default: false,
+// })

@@ -1,10 +1,10 @@
 function LoginInput({children, ...props}) {
 
     return (
-        <div>
+        <div className="my-2">
             <label 
                 htmlFor={props.id} 
-                className="block text-2xl">{children}
+                className="block text-xl">{children}
             </label>
             <input 
                 id={props.id} 

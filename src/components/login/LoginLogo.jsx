@@ -4,9 +4,9 @@ function LoginLogo() {
     
     return (
             <div className='flex-col flex-1 justify-center items-center'>
-                <h1 className='h-40 flex justify-center items-end text-8xl font-Jua'>CupTea</h1>
+                <h1 className='h-60 flex justify-center items-end text-8xl font-Jua'>CupTea</h1>
                 <div className='flex justify-center items-center overflow-hidden'>
-                    <img src={logo} className='object-cover'></img>
+                    <img src={logo} className='object-cover h-80'></img>
                 </div>
                 
             </div>
