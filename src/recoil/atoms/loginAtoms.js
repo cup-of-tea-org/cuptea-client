@@ -1,14 +1,12 @@
 import { atom } from "recoil";
+import addUserImg from '../../../public/addUser.png'
 
-export const loginDescTextAtom = atom({
-    key: 'loginDescTextAtom',
+
+
+export const joinProfileImgAtom = atom({
+    key: 'joinProfileImgAtom',
     default: {
-        text1: '무엇이든 질문해보세요!',
-        text2: 'CupTea와 함께'
-}
+        addUserImg
+    }
 })
 
-// export const isLoginAtom = atom({
-//     key: 'isLoginAtom',
-//     default: false,
-// })
