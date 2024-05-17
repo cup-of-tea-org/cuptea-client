@@ -17,10 +17,10 @@ function LoginDesc() {
                 <div className="text-5xl text-center">CupTea와 함께</div>
             </div>
             <LoginForm />
-            <div className="pt-8 text-sm">
+            <div className="pt-6 text-sm">
                 계정이 없으신가요? &nbsp;
                 <button 
-                className="text-sky-500  hover:scale-110 transition underline hover:decoration-wavy"
+                className="text-sky-500  hover:scale-105 transition underline"
                 onClick={handleJoinClick}
                 >
                     회원가입

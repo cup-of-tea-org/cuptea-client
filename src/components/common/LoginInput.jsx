@@ -19,7 +19,7 @@ function LoginInput({children, ...props}) {
             <input 
                 id={props.id} 
                 type={props.text} 
-                className="w-60 text-xl px-1 bg-black border-2 border-slate-100 rounded-md hover:border-blue-500 transition placeholder:text-sm"
+                className="w-60 h-10 text-base px-1 bg-black border-2 border-slate-100 rounded-md hover:border-blue-500 transition placeholder:text-sm"
                 onChange={handleInput}
                 ref={ref}
                 placeholder={props.placeholder}
