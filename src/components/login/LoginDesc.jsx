@@ -12,12 +12,12 @@ function LoginDesc() {
 
     return (
         <div className="flex flex-col flex-1 justify-center items-center font-Jua ">
-            <div className="my-8">
+            <div className="my-4">
                 <div className="text-5xl text-center py-4">무엇이든 질문해보세요!</div>
                 <div className="text-5xl text-center">CupTea와 함께</div>
             </div>
             <LoginForm />
-            <div className="pt-6 text-sm">
+            <div className="pt-4 text-sm">
                 계정이 없으신가요? &nbsp;
                 <button 
                 className="text-sky-500  hover:scale-105 transition underline"

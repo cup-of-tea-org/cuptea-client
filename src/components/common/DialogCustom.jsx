@@ -12,7 +12,7 @@ const DialogCustom = forwardRef(function DialogCustom({children, ...props}, ref)
 
         <dialog ref={ref} className="transition bg-gray-100 animate-openmenu w-72 h-full backdrop:bg-gray-300 backdrop:opacity-20 ">
                 <div className="relative cursor-pointer ">
-                    <img src={closeImg} alt="닫기" className="w-6 h-6 absolute top-2 right-2 cursor-pointer border-2 rounded-lg hover:border-red-500" onClick={handleCloseDialog}/>
+                    <img src={closeImg} alt="닫기" className="w-6 h-6 absolute top-2 right-2 cursor-pointer border-2 rounded-xl hover:border-red-500" onClick={handleCloseDialog}/>
                 </div>  
                 <div className="text-white">
                     <div className="top-8 left-4 text-xl absolute text-black w-64">

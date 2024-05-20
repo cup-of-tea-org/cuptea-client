@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import closeImg from '../../../public/close.png'
 import DialogCustom from "../common/DialogCustom";
-import { provision } from "../common/Provision";
+import { provision } from "../common/commonjs/Provision";
 
 function LoginButton({children, ...props}) {
 
