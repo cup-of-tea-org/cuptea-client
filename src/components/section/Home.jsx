@@ -23,7 +23,7 @@ function Home({children, ...props}) {
                 </ul>
                 <section className='flex flex-1 justify-center items-center h-72 text-center'>
                     <MainSection img={playImg} nav={'quest'}>질문하러 가기</MainSection>
-                    <MainSection img={coffeeImg} nav={'cuptea'}>컵티 보기</MainSection>
+                    <MainSection img={coffeeImg} nav={':id/cuptea'}>컵티 보기</MainSection>
                     <MainSection img={alarmImg} nav={'alarm'}>알림</MainSection>
                 </section>
             </div>

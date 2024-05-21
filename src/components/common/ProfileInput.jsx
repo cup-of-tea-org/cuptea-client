@@ -17,7 +17,7 @@ function ProfileInput({children, ...props}) {
             
             
             <input 
-            type={props.type} 
+            type='file' 
             id={props.id} 
             className="hidden"
             accept="image/png"
