@@ -11,3 +11,8 @@
     font-family: 'Dongle';
     src: url(../public/Dongle-Regular.ttf);
 }
+
+@font-face {
+    font-family: 'Dancing';
+    src: url(../public/DancingScript-VariableFont_wght.ttf);
+}

@@ -5,6 +5,7 @@ import ProfileInput from "../common/ProfileInput";
 import JoinSelectBox from "./JoinSelectBox"
 import LoginButton from "../login/LoginButton";
 import { idPwCss, loginMainButtonCss } from "../../css/LoginCss";
+import { loginInput } from "../../css/FormCss";
 
 function JoinForm() {
 
@@ -14,7 +15,7 @@ function JoinForm() {
         <div>
             <div className="flex flex-col justify-center items-center mt-12">
                 <form>
-                    <ProfileInput type={'file'} id={'profile'}></ProfileInput>
+                    <ProfileInput type={'file'} id={'profile'} css={loginInput}></ProfileInput>
                     <LoginInput id={'nickname'} text={'text'} placeholder={'닉네임을 입력해주세요...'}>Nickname</LoginInput>
                     <LoginInput id={'email'} text={'email'} placeholder={'이메일을 입력해주세요...'}>Email</LoginInput>
                     <button type="button" className="text-xs bg-emerald-200 text-black w-20 h-6 border-white border-2 rounded-md hover:border-blue-500">이메일 인증</button>

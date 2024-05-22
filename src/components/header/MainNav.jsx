@@ -17,8 +17,8 @@ function MainNav() {
     }
 
     return (
-        <header className="font-Jua h-full w-80 flex flex-col border-r-2 border-gray-500">
-            <div className="text-4xl my-12 justify-center items-center flex cursor-pointer" onClick={navigateHome}>
+        <header className="font-Jua h-full w-80 flex-col border-r-2 border-gray-500 hidden sm:flex">
+            <div className="text-4xl my-12 justify-center items-center flex cursor-pointer font-Dancing" onClick={navigateHome}>
                     CupTea
             </div>
             <div className="flex flex-1 text-sm my-12 justify-start ml-8 w-40">
@@ -32,7 +32,7 @@ function MainNav() {
             </div>
             <div className='flex flex-1 text-sm my-12 mt-20 justify-start ml-8 w-full'>
                 <ul>
-                    <Menu img={userImg} key={'profile'}>프로필</Menu>    
+                    <Menu img={userImg} key={'profile'} link={':id/profile'}>프로필</Menu>    
                     <Menu img={moreMenuImg} key={'더보기'}>더 보기</Menu>    
                 </ul>        
             </div>

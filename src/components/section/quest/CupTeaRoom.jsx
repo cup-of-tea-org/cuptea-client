@@ -15,7 +15,7 @@ function CupTeaRoom({...props}) {
     return (
         <div className='w-full'>
             <div>
-                <div className='flex justify-center items-center my-8 mx-12 flex-col lg:flex-row'>
+                <div className='flex justify-center items-center my-8 mx-12 flex-col md:flex-row'>
                     <h1 className='w-80 text-lg'>{props.name}</h1>
                     <div className='w-64 border-2 h-32 rounded-3xl relative cursor-pointer' onClick={handleNavigate}>
                         <img src={props.image} alt='roomImage' className='object-cover w-full h-full rounded-3xl'/>

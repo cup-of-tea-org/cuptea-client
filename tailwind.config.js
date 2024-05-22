@@ -9,6 +9,7 @@ export default {
     extend: {
       fontFamily: {
         'Jua' : ['Jua'],
+        'Dancing': ['Dancing']
       },
       colors: {
         'kakao-yellow' : '#FEE500',

@@ -13,7 +13,7 @@ function QuestForm() {
 
     return (
         <>
-            <div className='w-full font-Jua'>
+            <div className='w-screen font-Jua'>
                 <div className='flex mt-8 mx-4'>
                     <img src={playImg} alt='playImg' className='w-16'/>
                     <h1 className='mt-5 text-xl'>질문지 만들기</h1>

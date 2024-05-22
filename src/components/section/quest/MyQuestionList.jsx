@@ -9,7 +9,7 @@ function MyQuestionList() {
 
     return (
         <>
-            <div className='w-full font-Jua overflow-scroll'>
+            <div className='w-screen font-Jua overflow-scroll'>
                 <section>
                     <div className='flex fixed w-full text-white bg-black-200'>
                         <img src={coffeeImg} alt='playImg' className='w-16 h-full '/>

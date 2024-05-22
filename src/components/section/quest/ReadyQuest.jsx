@@ -8,7 +8,7 @@ import QuestButton from './QuestButton'
 function ReadyQuest() {
     return (
         <>
-            <div className='w-full font-Jua'>
+            <div className='w-screen overflow-scroll font-Jua'>
                 <section className='flex flex-1 justify-center items-center h-72 text-center'>
                     <img src={questionImg} alt='questionImage' className='w-72 mt-12'/>
                 </section>
@@ -16,9 +16,9 @@ function ReadyQuest() {
                         누구에게 질문할까요?
                 </article>
                 <div>
-                    <ul className='flex justify-between items-center px-12 lg:px-12 mt-12 transition '>
+                    <ul className='flex flex-wrap sm:flex-1 justify-between items-center px-12 sm:px-12 mt-12 transition'>
                         {DUMMY_USER.map((it) => (
-                            <div className='flex flex-col border-2 w-16 justify-center items-center rounded-md border-gray-800 hover:border-violet-300 hover:scale-105 hover:bg-gray-200 hover:text-black transition'>
+                            <div className='flex flex-wrap border-2 w-16 justify-center sm:flex-col items-center rounded-md border-gray-800 hover:border-violet-300 hover:scale-105 hover:bg-gray-200 hover:text-black transition'>
                                 <li key={it.id} className='w-12 text-center text-xs transition cursor-pointer '>
                                     <img src={userImg} />
                                 </li>

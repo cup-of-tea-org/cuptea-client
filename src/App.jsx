@@ -10,6 +10,7 @@ import SingleQuestForm from './components/section/quest/SingleQuestForm'
 import QuestionList from './components/section/quest/QuestionList'
 import CupTeaRoom from './components/section/quest/CupTeaRoom'
 import MyQuestionList from './components/section/quest/MyQuestionList'
+import Profile from './pages/Profile'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: ':id/cuptea',
         element: <MyQuestionList />
+      },
+      {
+        path: ':id/profile',
+        element: <Profile />
       },
       {
         path: 'quest',
