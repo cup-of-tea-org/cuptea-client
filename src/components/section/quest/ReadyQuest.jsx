@@ -4,11 +4,18 @@ import userImg from '../../../../public/user.png'
 import LoginButton from '../../login/LoginButton'
 import { normal, normalWhite } from '../../../css/LoginCss'
 import QuestButton from './QuestButton'
+import { UserCss } from '../../../css/UserCss'
+import { useRecoilState } from 'recoil'
+import { UserClickedAtom, UserCssAtom } from '../../../recoil/atoms/UserAtoms'
+import { DUMMY_USER2 } from '../../common/commonjs/DummyUser2'
+import { useState } from 'react'
+import ReadyUser from './ReadyUser'
 
 function ReadyQuest() {
+
     return (
         <>
-            <div className='w-screen overflow-scroll font-Jua'>
+            <div className='w-screen h-screen overflow-y-scroll font-Jua'>
                 <section className='flex flex-1 justify-center items-center h-72 text-center'>
                     <img src={questionImg} alt='questionImage' className='w-72 mt-12'/>
                 </section>
@@ -17,14 +24,9 @@ function ReadyQuest() {
                 </article>
                 <div>
                     <ul className='flex flex-wrap sm:flex-1 justify-between items-center px-12 sm:px-12 mt-12 transition'>
-                        {DUMMY_USER.map((it) => (
-                            <div className='flex flex-wrap border-2 w-16 justify-center sm:flex-col items-center rounded-md border-gray-800 hover:border-violet-300 hover:scale-105 hover:bg-gray-200 hover:text-black transition'>
-                                <li key={it.id} className='w-12 text-center text-xs transition cursor-pointer '>
-                                    <img src={userImg} />
-                                </li>
-                                <div className='text-center text-xs truncate w-12'>{it.nickname}</div>
-                            </div>
-                            ))}
+                        {DUMMY_USER2.map((it) => (
+                            <ReadyUser key={it.id} id={it.id} img={it.img ?? userImg} nickname={it.nickname} ></ReadyUser>
+                        ))}
                     </ul>
                 </div>
                 <div className='flex justify-center items-center mt-8 '>

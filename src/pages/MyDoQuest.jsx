@@ -1,16 +1,17 @@
 import { useNavigate, useParams } from "react-router-dom"
-import { DUMMY_CUPTEAS } from "../../common/commonjs/DummyCupTeas";
-import coffeeImg from '../../../../public/coffee.png'
-import Dummy_Image from '../../../../public/ex1.jpg'
-import CupTeaRoom from "./CupTeaRoom";
-import { DUMMY_CUPTEAS2 } from "../../common/commonjs/DummyCupTeas2";
+import coffeeImg from '../../public/coffee.png'
+import Dummy_Image from '../../public/ex1.jpg'
+import CupTeaRoom from "../components/section/quest/CupTeaRoom";
+import { DUMMY_CUPTEAS } from "../components/common/commonjs/DummyCupTeas";
+import { DUMMY_MY_CUPTEAS } from "../components/common/commonjs/DummyMyCupTea";
 
-function MyQuestionList() {
+function MyDoQuest() {
+
     const param = useParams('id');
     const navigate = useNavigate()
 
     function handleNavigate() {
-        navigate('/');
+        navigate('/')
     }
 
     return (
@@ -19,11 +20,11 @@ function MyQuestionList() {
                 <section>
                     <div className='flex fixed w-full text-white bg-black-200 mt-4 pl-4'>
                         <img src={coffeeImg} alt='playImg' className='w-16 h-full cursor-pointer' onClick={handleNavigate}/>
-                        <h1 className='mt-5 text-xl pl-4'>{param.id + ' 님에게 보내는 컵티 목록'}</h1>
+                        <h1 className='mt-5 text-xl pl-4'>{'내가 한 CupTea'}</h1>
                     </div>
                     <div className='flex flex-col w-full justify-center items-center py-20'>
-                        {DUMMY_CUPTEAS2.map((it) => (
-                            <CupTeaRoom key={it.id} name={it.name} image={Dummy_Image} count={it.count}></CupTeaRoom>
+                        {DUMMY_MY_CUPTEAS.map((it) => (
+                            <CupTeaRoom name={it.name} image={Dummy_Image} to={it.to}></CupTeaRoom>
                         ))}
                     </div>
                 </section>
@@ -32,4 +33,4 @@ function MyQuestionList() {
     )
 }
 
-export default MyQuestionList
+export default MyDoQuest

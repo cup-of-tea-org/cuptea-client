@@ -13,7 +13,7 @@ function JoinForm() {
 
     return (
         <div>
-            <div className="flex flex-col justify-center items-center mt-12">
+            <div className="flex flex-col justify-center items-center mt-4">
                 <form>
                     <ProfileInput type={'file'} id={'profile'} css={loginInput}></ProfileInput>
                     <LoginInput id={'nickname'} text={'text'} placeholder={'닉네임을 입력해주세요...'}>Nickname</LoginInput>

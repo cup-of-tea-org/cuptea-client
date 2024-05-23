@@ -11,6 +11,7 @@ import QuestionList from './components/section/quest/QuestionList'
 import CupTeaRoom from './components/section/quest/CupTeaRoom'
 import MyQuestionList from './components/section/quest/MyQuestionList'
 import Profile from './pages/Profile'
+import MyDoQuest from './pages/MyDoQuest'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: ':id/cuptea',
         element: <MyQuestionList />
+      },
+      {
+        path: ':id/my-cuptea',
+        element: <MyDoQuest />
       },
       {
         path: ':id/profile',

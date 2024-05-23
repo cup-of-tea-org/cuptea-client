@@ -1,24 +1,24 @@
-export const DUMMY_CUPTEAS = [
+export const DUMMY_CUPTEAS2 = [
     {
-        id: 12,
+        id: 30,
         name: '여행에 대한 질문방',
         count: 4,
         to: 'wefwef_12'
     },
     {
-        id: 13,
+        id: 31,
         name: '일상에 대한 질문방',
         count: 3,
         to: 'rabbit_231232'
     },
     {
-        id: 14,
+        id: 32,
         name: 'ㅎㅎㅎㅎㅎㅎ',
         count: 1,
         to: 'cat1234'
     },
     {
-        id: 15,
+        id: 33,
         name: '어쩌다 질문방',
         count: 2,
         to: 'zookeeper1234'
