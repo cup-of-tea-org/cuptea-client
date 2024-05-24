@@ -12,6 +12,8 @@ import CupTeaRoom from './components/section/quest/CupTeaRoom'
 import MyQuestionList from './components/section/quest/MyQuestionList'
 import Profile from './pages/Profile'
 import MyDoQuest from './pages/MyDoQuest'
+import ReadyQuestDetail from './components/section/quest/ReadyQuestDetail'
+import Visitors from './pages/Visitors'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
       {
         index:true,
         element: <Home />
+      },
+      {
+        path: ':id/visitors',
+        element: <Visitors />
       },
       {
         path: ':id/cuptea',
@@ -39,7 +45,11 @@ const router = createBrowserRouter([
         element: <ReadyQuest />,
       },
       {
-        path: 'quest/form',
+        path: 'quest/:id',
+        element: <ReadyQuestDetail />
+      },
+      {
+        path: 'quest/:id/form',
         element: <QuestForm />
       },
       {

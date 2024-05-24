@@ -25,16 +25,15 @@ function ReadyQuest() {
                 <div>
                     <ul className='flex flex-wrap sm:flex-1 justify-between items-center px-12 sm:px-12 mt-12 transition'>
                         {DUMMY_USER2.map((it) => (
-                            <ReadyUser key={it.id} id={it.id} img={it.img ?? userImg} nickname={it.nickname} ></ReadyUser>
+                            <ReadyUser key={it.id} id={it.id} img={it.img ?? userImg} nickname={it.nickname} link={`/quest/:${it.id}`}></ReadyUser>
                         ))}
                     </ul>
                 </div>
-                <div className='flex justify-center items-center mt-8 '>
-                    <button type='button' className='text-sm w-16 border-2 border-gray-800 rounded-xl hover:border-blue-500 transition hover:scale-105'>Next</button>
+                <div className='flex justify-center pt-12'>
+                    컵티를 보낼 친구를 클릭해주세요!
                 </div>
-                <div className='flex justify-center '>
-                    <QuestButton css={normal} link={'form'}>질문지 만들기</QuestButton>
-                    <QuestButton css={normalWhite} link={':id/questList'}>빈 질문지 보기</QuestButton>
+                <div className='flex justify-center items-center mt-12 '>
+                    <button type='button' className='text-sm w-16 border-2 border-gray-800 rounded-xl hover:border-blue-500 transition hover:scale-105'>Next</button>
                 </div>
             </div>
         </>

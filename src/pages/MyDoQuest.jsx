@@ -24,7 +24,7 @@ function MyDoQuest() {
                     </div>
                     <div className='flex flex-col w-full justify-center items-center py-20'>
                         {DUMMY_MY_CUPTEAS.map((it) => (
-                            <CupTeaRoom name={it.name} image={Dummy_Image} to={it.to}></CupTeaRoom>
+                            <CupTeaRoom key={it.id} name={it.name} image={Dummy_Image} to={it.to}></CupTeaRoom>
                         ))}
                     </div>
                 </section>

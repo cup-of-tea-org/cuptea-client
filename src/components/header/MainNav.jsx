@@ -7,6 +7,7 @@ import userImg from '../../../public/user.png'
 import moreMenuImg from '../../../public/more.png'
 import Menu from './Menu'
 import { useNavigate } from 'react-router-dom'
+import messageImg from '../../../public/message.png'
 
 function MainNav() {
 
@@ -26,7 +27,7 @@ function MainNav() {
                     <Menu img={homeImg} key={'home'} >홈</Menu>
                     <Menu img={searchImg} key={'search'} link={':id/my-cuptea'}>내가 한 컵티</Menu>
                     <Menu img={playImg} key={'ask'} link={'quest'}>컵티하러 가기</Menu>
-                    <Menu img={alarmImg} key={'alarm'}>알림</Menu>
+                    <Menu img={messageImg} key={'message'} link={':id/visitors'}>방명록</Menu>
                     <Menu img={addUserImg} key={'addUser'}>친구 추가</Menu>
                 </ul>
             </div>

@@ -14,9 +14,9 @@ function Profile({children, ...props}) {
     return (
         <>
             <div className='w-screen font-Jua mt-8 overflow-y-scroll'>    
-                    <div className='flex justify-center '>
+                    <div className='flex justify-center mt-4'>
                         <ProfileInput type={'file'} id={'profile'}></ProfileInput>
-                        <ProfileDetail css={'mx-4 mt-12 text-xl'}>rabbit_0212</ProfileDetail>
+                        <ProfileDetail css={'mx-4 mt-12 text-xl '}>rabbit_0212</ProfileDetail>
                     </div>
                     <div className='sm:h-16 h-12 flex justify-center items-center gap-8 text-sm text-center'>
                         <ProfileDetail count={2}>컵티</ProfileDetail>
