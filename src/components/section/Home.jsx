@@ -11,7 +11,7 @@ function Home({children, ...props}) {
 
     return (
         <>
-            <div className='w-screen overflow-y-scroll font-Jua'>
+            <div className='w-screen overflow-y-scroll font-Jua '>
                 <ul className='flex flex-1 justify-between items-center sm:px-24 mt-8 sm:h-20'>
                     {DUMMY_USER.map((it) => (
                         <ReadyUser key={it.id} id={it.id} img={it.img ?? userImg} nickname={it.nickname} link={`:${it.id}/visitors`}></ReadyUser>

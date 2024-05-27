@@ -17,7 +17,8 @@ export default {
       animation: {
         openmenu:  'openmenu 0.5s',
         closemenu:  'closemenu 0.5s',
-        opendialog: 'opendialog 0.5s'
+        opendialog: 'opendialog 0.5s',
+        actSlideRight: 'slideRight 0.5s forwards',
       },
       keyframes: {
         openmenu: {
@@ -31,7 +32,11 @@ export default {
         opendialog: {
               '0%': {opacity: 0},
               '100%': {opacity: 10}
-          }
+          },
+        slideRight: {
+            from: { left: '-100' },
+            to: { left: '0' },
+        },
       }
     },
   },

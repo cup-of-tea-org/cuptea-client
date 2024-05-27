@@ -1,22 +1,22 @@
-import userImg from '../../../public/user.png'
-import likeImg from '../../../public/like.png'
 import commentImg from '../../../public/comment.png'
 import exImg from '../../../public/puppy.jpg'
 import VisitorsDialog from './VisitorsDialog'
 import { useRef } from 'react'
+import VisitorsLike from './VisitorsLike'
 
 
 function VisitorsDesc({children, ...props}) {
+
+    
 
     const dialogRef = useRef();
 
     function handleDialog() {
         dialogRef.current.showModal();
     }
-
     return (
         <>  
-            <VisitorsDialog ref={dialogRef}/>
+            <VisitorsDialog ref={dialogRef} img={exImg} desc={props.desc} comment={props.comment} like={props.like}/>
             <div className="h-12 mt-8 flex sm:justify-center sm:mx-40 mx-12">
                 <div className='flex items-center w-12 justify-center'>
                     <img src={props.img} className='w-6 h-6' alt='userImage' />
@@ -27,12 +27,9 @@ function VisitorsDesc({children, ...props}) {
                 <div className=' sm:w-32 w-16 flex justify-start items-center text-xs'>
                     <p className='truncate'>{props.desc}</p>
                 </div>
-                <div className=' w-12 flex justify-start items-center text-xs'>
-                    <img src={likeImg} alt='좋아요' className='sm:w-6 sm:h-6 ml-2 w-4 h-4 cursor-pointer'/>
-                    <p>{props.like}</p>
-                </div>
-                <div className='w-12 flex justify-start items-center text-xs'>
-                    <img src={commentImg} alt='좋아요' className='sm:w-6 sm:h-6 w-4 h-4 cursor-pointer'/>
+                <VisitorsLike like={props.like} css={'md:w-12 w-16 flex justify-start items-center text-xs transition hover:scale-105'}/>
+                <div className='w-12 flex justify-start items-center text-xs transition hover:scale-105'>
+                    <img src={commentImg} alt='댓글' className='sm:w-6 sm:h-6 w-8 h-8 cursor-pointer' onClick={handleDialog} />
                     <p>{props.comment.length}</p>
                 </div>
             </div>
