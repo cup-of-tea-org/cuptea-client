@@ -1,11 +1,15 @@
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom"
+import DefaultModal from "../../common/DefaultModal";
 
 function MainSection({children, ...props}) {
 
     const navigate = useNavigate();
+    const dialogRef = useRef();
 
     function handleClickNav() {
-        navigate(props.nav);
+
+        props.isModal ? dialogRef.current.showModal() : navigate(props.nav)
     }
 
     return (
@@ -16,6 +20,7 @@ function MainSection({children, ...props}) {
                 <img src={props.img} alt="menu" className="sm:w-24 h-20 w-20 sm:h-24 sm:mx-12 my-4"/>
                 <p className="md:text-center mb-4">{children}</p>
             </div>
+            <DefaultModal ref={dialogRef}>알림</DefaultModal>
         </>
     )
 }

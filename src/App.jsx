@@ -14,6 +14,7 @@ import Profile from './pages/Profile'
 import MyDoQuest from './pages/MyDoQuest'
 import ReadyQuestDetail from './components/section/quest/ReadyQuestDetail'
 import Visitors from './pages/Visitors'
+import FriendLayout from './pages/Friend'
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: ':id/:roomNum/singleQuestForm',
         element: <SingleQuestForm />
+      },
+      {
+        path: ':id/friends',
+        element: <FriendLayout />
       }
       
     ]

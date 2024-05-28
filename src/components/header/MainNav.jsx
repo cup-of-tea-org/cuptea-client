@@ -37,7 +37,7 @@ function MainNav() {
                     <Menu img={searchImg} key={'search'} link={':id/my-cuptea'}>내가 한 컵티</Menu>
                     <Menu img={playImg} key={'ask'} link={'quest'}>컵티하러 가기</Menu>
                     <Menu img={messageImg} key={'message'} link={':id/visitors'}>방명록</Menu>
-                    <Menu img={addUserImg} key={'addUser'}>친구 추가</Menu>
+                    <Menu img={addUserImg} key={'addUser'} link={':id/friends'}>친구 추가</Menu>
                 </ul>
 
             </div>
