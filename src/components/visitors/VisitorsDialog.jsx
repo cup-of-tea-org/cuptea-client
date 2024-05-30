@@ -12,7 +12,7 @@ const VisitorsDialog = forwardRef(function VisitorsDialog({children, ...props}, 
 
     return (
         <>  
-                <dialog ref={ref} className=" transition w-3/4 bg-black bg-opacity-100 animate-openmenu h-full backdrop:bg-gray-200 backdrop:opacity-10 ">
+                <dialog ref={ref} className=" transition w-11/12 bg-black bg-opacity-100 animate-openmenu h-full backdrop:bg-gray-200 backdrop:opacity-10 ">
                     <div className="relative cursor-pointer ">
                         <img src={closeImg} alt="닫기" className="w-6 h-6 absolute top-4 right-4 cursor-pointer border-2 rounded-xl hover:border-red-500" onClick={handleCloseDialog}/>
                     </div>  

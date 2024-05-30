@@ -16,12 +16,12 @@ function Profile({children, ...props}) {
             <div className='w-screen font-Jua mt-8 overflow-y-scroll'>    
                     <div className='flex justify-center mt-4'>
                         <ProfileInput type={'file'} id={'profile'}></ProfileInput>
-                        <ProfileDetail css={'mx-4 mt-12 text-xl '}>rabbit_0212</ProfileDetail>
+                        <ProfileDetail css={'mx-4 mt-12 text-xl cursor-pointer'} link={`/${param.id}/profile`}>rabbit_0212</ProfileDetail>
                     </div>
                     <div className='sm:h-16 h-12 flex justify-center items-center gap-8 text-sm text-center'>
-                        <ProfileDetail count={2}>컵티</ProfileDetail>
-                        <ProfileDetail count={4}>방명록</ProfileDetail>
-                        <ProfileDetail count={13}>친구</ProfileDetail>
+                        <ProfileDetail count={2} css={'cursor-pointer transition hover:scale-110'} link={`/${param.id}/my-cuptea`}>컵티</ProfileDetail >
+                        <ProfileDetail count={4} css={'cursor-pointer transition hover:scale-110'} link={`/${param.id}/visitors`}>방명록</ProfileDetail>
+                        <ProfileDetail count={13} css={'cursor-pointer transition hover:scale-110'} link={`/${param.id}/friendList`}>친구</ProfileDetail>
                     </div>
                     <div className='h-80 flex flex-col justify-center items-center sm:mt-12 mt-16'>
                         <ProfileInputDetail id={'nickname'} type={'text'}>Nickname</ProfileInputDetail>
