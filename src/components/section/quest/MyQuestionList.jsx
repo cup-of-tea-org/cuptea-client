@@ -19,11 +19,11 @@ function MyQuestionList() {
                 <section>
                     <div className='flex fixed w-full text-white bg-black-200 mt-4 pl-4'>
                         <img src={coffeeImg} alt='playImg' className='w-16 h-full cursor-pointer' onClick={handleNavigate}/>
-                        <h1 className='mt-5 text-xl pl-4'>{param.id + ' 님에게 보내는 컵티 목록'}</h1>
+                        <h1 className='mt-5 text-xl pl-4'>{param.id + ' 님에게 온 컵티 목록'}</h1>
                     </div>
                     <div className='flex flex-col w-full justify-center items-center py-20'>
                         {DUMMY_CUPTEAS2.map((it) => (
-                            <CupTeaRoom key={it.id} name={it.name} image={Dummy_Image} count={it.count}></CupTeaRoom>
+                            <CupTeaRoom key={it.id} id={it.id}name={it.name} image={Dummy_Image} count={it.count} date={it.date}></CupTeaRoom>
                         ))}
                     </div>
                 </section>

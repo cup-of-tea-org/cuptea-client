@@ -6,7 +6,7 @@ import FriendList from "../components/friend/FriendList";
 
 function FriendLayout() {
 
-    const param = useParams('id');
+    
 
     return (
         <>

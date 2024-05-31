@@ -8,15 +8,16 @@ import moreMenuImg from '../../../public/more.png'
 import Menu from './Menu'
 import { useNavigate } from 'react-router-dom'
 import messageImg from '../../../public/message.png'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import MenuModal from './MenuModal'
-import { useRecoilState } from 'recoil'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import { MenuIsModalAtom } from '../../recoil/atoms/MenuAtoms'
 
 function MainNav() {
 
     const navigate = useNavigate();
     const [isModal, setIsModal] = useRecoilState(MenuIsModalAtom)
+    const [isRunningModal, setIsRunningModal] = useState(false)
     
     function navigateHome() {
         navigate("/");
@@ -24,11 +25,15 @@ function MainNav() {
 
     function handleModal() {
         setIsModal(prev => !prev)
+        setIsRunningModal(prev => !prev)
     }
 
+    
+
+
     return (
-        <header className="font-Jua h-full w-80 flex-col border-r-2 border-gray-500 hidden sm:flex">
-            <div className="text-4xl my-12 justify-center items-center flex cursor-pointer font-Dancing" onClick={navigateHome}>
+        <header className="font-Jua h-full w-80 flex-col border-r-2 border-gray-500 hidden sm:flex" >
+            <div className="text-4xl my-12 justify-center items-center flex cursor-pointer font-Dancing" onClick={navigateHome} >
                     CupTea
             </div>
             <div className="flex flex-1 text-sm mt-12 justify-start ml-8 w-40">
@@ -45,7 +50,7 @@ function MainNav() {
             <div className='flex flex-1 text-sm my-12 mt-32 justify-start ml-8 w-full'>
                 <ul>
                     <Menu img={userImg} key={'profile'} link={':id/profile'}>프로필</Menu>    
-                    <Menu img={moreMenuImg} key={'더보기'} >더 보기</Menu>
+                    <Menu img={moreMenuImg} key={'더보기'}>더 보기</Menu>
                 </ul>
             </div>
         </header>

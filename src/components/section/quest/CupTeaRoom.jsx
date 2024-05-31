@@ -8,7 +8,7 @@ function CupTeaRoom({...props}) {
     const navigate = useNavigate();
 
     function handleNavigate() {
-        navigate(props.link);
+        navigate(`/${param.id}/${props.id}/cuptea`);
     }
 
 
@@ -21,8 +21,9 @@ function CupTeaRoom({...props}) {
                     
                     <div className='w-64 border-2 h-32 rounded-3xl relative cursor-pointer hover:scale-110 transition' onClick={handleNavigate}>
                         <img src={props.image} alt='roomImage' className='object-cover w-full h-full rounded-3xl'/>
-                        {props.count && <p className='absolute bottom-4 right-4'>{props.count + '/5'}</p>}
+                        {props.count && <p className='absolute bottom-4 right-4' >{props.count + '/5'}</p>}
                         {props.to && <div className='my-4 text-xs absolute left-16 text-center block px-4 '>{`To. ${props.to}`}</div>}
+                        {props.date && <div className='my-4 text-xs absolute right-16 text-center block px-4 '>Arrived: {props.date}</div>}
                     </div>
                     
 
