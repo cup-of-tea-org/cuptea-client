@@ -17,7 +17,7 @@ function Home({children, ...props}) {
                         <ReadyUser key={it.id} id={it.id} img={it.img ?? userImg} nickname={it.nickname} link={`:${it.id}/visitors`}></ReadyUser>
                         ))}
                 </ul>
-                <section className='flex h-0 sm:flex sm:flex-1 sm:justify-between sm:items-center sm:h-72 text-center sm:flex-row '>
+                <section className='flex h-0 sm:flex sm:flex-1 sm:justify-between sm:items-center sm:h-72 text-center sm:flex-row  animate-goLeftToRight'>
                     <MainSection img={playImg} nav={'quest'}>Play!</MainSection>
                     <MainSection img={coffeeImg} nav={':id/cuptea'}>My CupTea</MainSection>
                     <MainSection img={alarmImg} nav={'alarm'} isModal={true}>알림</MainSection>

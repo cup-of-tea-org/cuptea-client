@@ -12,8 +12,8 @@ function ReadyQuestDetail() {
         <>
             <div className='w-screen h-screen overflow-y-scroll font-Jua'>
                 <section className='flex flex-1 justify-center items-center h-72 text-center'>
-                    <div className='border-4 border-violet-400 rounded-xl h-64 w-56 mt-24 flex justify-center items-center bg-white'>
-                        <img src={userImg} alt='userImg' className='w-48 h-48'/>
+                    <div className='border-4 border-violet-100 rounded-xl h-64 w-56 mt-24 flex justify-center items-center bg-white animate-goUpLevel shadow-2xl shadow-violet-500/100'>
+                        <img src={userImg} alt='userImg' className='w-48 h-48 '/>
                     </div>
                 </section>
                 <div className='flex justify-center text-4xl items-center h-40 pt-12'>

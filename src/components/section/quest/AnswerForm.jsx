@@ -16,25 +16,16 @@ function AnswerForm() {
     const activeQuestionIndex = userAnswers.length;
     const navigate = useNavigate();
 
-    if (activeQuestionIndex >= 5) {
-        return (
-            <div className='w-screen font-Jua mt-8 '>
-                <QuestionResult answers={userAnswers}/>
-            </div>
-        )
-    }
 
     const handleSubmitAnswer = (answer) => {
-        console.log(answer)
+        console.log(activeQuestionIndex)
         setUserAnswers([...userAnswers, answer]);
-
-    
 
     if (showAnswers) {
             setShowAnswers(prev => {
                 return !prev
             });
-            setImgCss('w-full h-3/4 object-contain')
+            setImgCss('w-full h-3/4 object-contain animate-openmenu')
         }
     }
 
@@ -53,6 +44,14 @@ function AnswerForm() {
             clearTimeout(timer)
         }
     },[userAnswers, activeQuestionIndex])
+
+    if (activeQuestionIndex > 4) {
+        return (
+            <div className='w-screen font-Jua flex justify-center items-center'>
+                <QuestionResult answers={userAnswers} questions={DUMMY_QUESTIONS}/>
+            </div>
+        )
+    }
 
     
 

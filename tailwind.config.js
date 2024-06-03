@@ -21,6 +21,8 @@ export default {
         actSlideRight: 'slideRight 0.5s forwards',
         goUpLevel: 'goUpLevel 0.5s',
         goUpLevel2: 'goUpLevel2 0.5s',
+        godownLevel: 'godownLevel 0.5s',
+        goLeftToRight: 'goLeftToRight 1s',
         
       },
       keyframes: {
@@ -48,6 +50,15 @@ export default {
           from: { transform: 'translateY(30%)' },
           to: { transform: 'translateY(0%)' },
         },
+        godownLevel: {
+          from: { transform: 'translateY(-40%)' },
+          to: { transform: 'translateY(0%)'  },
+        },
+        goLeftToRight: {
+          from: { transform: 'translateX(-60%)' },
+          to: { transform: 'translateX(0%)'  },
+        }
+        
         }
       }
     },

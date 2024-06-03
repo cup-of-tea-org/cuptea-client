@@ -7,7 +7,7 @@ import VisitorsDesc from '../components/visitors/VisitorsDesc'
 function Visitors() {
     return (
         <>  
-            <div className='w-screen font-Jua mt-8 overflow-y-scroll'>
+            <div className='w-screen font-Jua mt-8 overflow-y-scroll '>
                 <ul className='flex flex-1 justify-between sm:gap-0 items-center sm:px-24 sm:h-20'>
                     {DUMMY_USER.map((it) => (
                         <ReadyUser key={it.id} id={it.id} img={it.img ?? userImg} nickname={it.nickname} link={`/:${it.id}/visitors`}></ReadyUser>

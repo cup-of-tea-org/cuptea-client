@@ -17,7 +17,7 @@ function QuestLayout({props}) {
                         <p className='text-2xl '>컵티 예제 제목입니다.</p>
                     </div>
                     <div className='flex justify-center items-center mt-8'>
-                        <QuestButton css={'border-2 py-2 px-4 rounded-2xl hover:bg-yellow-300 transition hover:scale-105 hover:text-black'} link={`/${id}/${roomId}/quest?quest=1`}>Start!</QuestButton>
+                        <QuestButton css={'border-2 py-2 px-4 rounded-2xl hover:bg-yellow-100 transition hover:scale-105 hover:text-black shadow-lg shadow-violet-500/50'} link={`/${id}/${roomId}/quest?quest=1`}>Start!</QuestButton>
                     </div>
                 </div>
             </div>

@@ -14,11 +14,10 @@ function ReadyUser({id, ...props}) {
     }
 
     return (
-        
         <div key={id} 
-        className={UserCss } onClick={handleIsClicked} >
-            <li className='w-12 text-center text-xs transition cursor-pointer '>
-                <img src={props.img} />
+        className={UserCss} onClick={handleIsClicked} >
+            <li className='w-12 text-center text-xs transition cursor-pointer'>
+                <img src={props.img} alt="질문 이미지" className="animate-goUpLevel2"/>
             </li>
             <div className='text-center text-xs truncate w-12'>{props.nickname}</div>
             

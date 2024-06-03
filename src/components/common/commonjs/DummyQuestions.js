@@ -24,7 +24,7 @@ export const DUMMY_QUESTIONS = [
     },
     {
         id: 103,
-        type: 'mutiple',
+        type: 'multiple',
         question: '누구랑 여행 가고 싶어?',
         answers: [
             '홍길동', '임꺽정', '이순신'
@@ -32,11 +32,11 @@ export const DUMMY_QUESTIONS = [
         questioner: 'elbis_123'
     },
     {
-        id: 103,
-        type: 'mutiple',
-        question: '누구랑 여행 가고 싶어?',
+        id: 104,
+        type: 'multiple',
+        question: '나랑 놀래?',
         answers: [
-            '홍길동', '임꺽정', '이순신'
+            'YES', 'NO'
         ],
         questioner: 'takeone123'
     },

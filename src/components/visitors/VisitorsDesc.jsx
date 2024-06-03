@@ -16,7 +16,7 @@ function VisitorsDesc({children, ...props}) {
     return (
         <>  
             <VisitorsDialog ref={dialogRef} img={exImg} desc={props.desc} comment={props.comment} like={props.like}/>
-            <div className="h-12 mt-8 flex sm:justify-center sm:mx-40 mx-12">
+            <div className="h-12 mt-8 flex sm:justify-center sm:mx-40 mx-12 shadow-lg shadow-zinc-500/20">
                 <div className='flex items-center w-12 justify-center'>
                     <img src={props.img} className='w-6 h-6' alt='userImage' />
                 </div>
@@ -32,8 +32,8 @@ function VisitorsDesc({children, ...props}) {
                     <p>{props.comment.length}</p>
                 </div>
             </div>
-            <div className='flex justify-center px-16 mb-4 mt-2 h-80 sm:px-32 cursor-pointer'>
-                <img src={exImg} alt='visitorImage' className='w-80 h-80 object-cover ' onClick={handleDialog} />
+            <div className='flex justify-center px-16 mb-4 mt-2 h-80 sm:px-32 cursor-pointer '>
+                <img src={exImg} alt='visitorImage' className='w-80 h-80 object-cover shadow-2xl shadow-zinc-500/50 ' onClick={handleDialog} />
             </div>
         </>
     )

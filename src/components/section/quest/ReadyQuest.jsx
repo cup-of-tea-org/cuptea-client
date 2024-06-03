@@ -16,10 +16,10 @@ function ReadyQuest() {
     return (
         <>
             <div className='w-screen h-screen overflow-y-scroll font-Jua'>
-                <section className='flex flex-1 justify-center items-center h-72 text-center'>
+                <section className='flex flex-1 justify-center items-center h-72 text-center animate-godownLevel'>
                     <img src={questionImg} alt='questionImage' className='w-72 mt-12'/>
                 </section>
-                <article className='text-center text-4xl mt-4'>
+                <article className='text-center text-4xl mt-8'>
                         누구에게 질문할까요?
                 </article>
                 <div>
