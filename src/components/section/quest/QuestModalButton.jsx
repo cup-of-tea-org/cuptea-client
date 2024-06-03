@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom"
 
-function ModalButton({children, setIsCompleted, handleCloseDialog, ...props}) {
+function QuestModalButton({children,  handleCloseDialog, ...props}) {
 
+    const navigate = useNavigate()
 
     function handleClick() {
-        setIsCompleted(prev => !prev)
+        navigate(`/${props.id}/${props.id}/cuptea`) // props.id/roomId/cuptea 로 바껴야함.
     }
 
     return (
@@ -15,4 +16,4 @@ function ModalButton({children, setIsCompleted, handleCloseDialog, ...props}) {
     )
 }
 
-export default ModalButton
+export default QuestModalButton

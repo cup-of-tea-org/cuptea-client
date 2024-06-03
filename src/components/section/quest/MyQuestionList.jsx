@@ -23,7 +23,7 @@ function MyQuestionList() {
                     </div>
                     <div className='flex flex-col w-full justify-center items-center py-20'>
                         {DUMMY_CUPTEAS2.map((it) => (
-                            <CupTeaRoom key={it.id} id={it.id}name={it.name} image={Dummy_Image} count={it.count} date={it.date}></CupTeaRoom>
+                            <CupTeaRoom key={it.id} id={it.id}name={it.name} image={Dummy_Image} count={it.count} date={it.date} state={'completed'}></CupTeaRoom>
                         ))}
                     </div>
                 </section>

@@ -16,6 +16,8 @@ import ReadyQuestDetail from './components/section/quest/ReadyQuestDetail'
 import Visitors from './pages/Visitors'
 import FriendLayout from './pages/Friend'
 import FriendListPage from './pages/FriendListPage'
+import QuestLayout from './pages/Quest'
+import AnswerForm from './components/section/quest/AnswerForm'
 
 const router = createBrowserRouter([
   {
@@ -63,8 +65,16 @@ const router = createBrowserRouter([
         element: <QuestionList />
       },
       {
-        path: ':id/:roomNum/singleQuestForm',
+        path: ':id/:roomId/singleQuestForm',
         element: <SingleQuestForm />
+      },
+      {
+        path: ':id/:roomId/cuptea',
+        element: <QuestLayout />
+      },
+      {
+        path: ':id/:roomId/quest',
+        element: <AnswerForm />
       },
       {
         path: ':id/friends',

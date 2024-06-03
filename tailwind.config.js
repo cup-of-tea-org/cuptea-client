@@ -19,6 +19,9 @@ export default {
         closemenu:  'closemenu 0.5s',
         opendialog: 'opendialog 0.5s',
         actSlideRight: 'slideRight 0.5s forwards',
+        goUpLevel: 'goUpLevel 0.5s',
+        goUpLevel2: 'goUpLevel2 0.5s',
+        
       },
       keyframes: {
         openmenu: {
@@ -37,9 +40,17 @@ export default {
             from: { left: '-100' },
             to: { left: '0' },
         },
+        goUpLevel: {
+          from: { transform: 'translateY(100%)' },
+          to: { transform: 'translateY(0%)' },
+        },
+        goUpLevel2: {
+          from: { transform: 'translateY(30%)' },
+          to: { transform: 'translateY(0%)' },
+        },
+        }
       }
     },
-  },
   plugins: [],
 }
 

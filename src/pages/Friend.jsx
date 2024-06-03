@@ -3,10 +3,10 @@ import friendImg from '../../public/friend.png'
 import { DUMMY_FRIEND_LIST } from "../components/common/commonjs/DummyFriendList";
 import userImg from '../../public/user.png'
 import FriendList from "../components/friend/FriendList";
+import { useRef } from "react";
 
 function FriendLayout() {
 
-    
 
     return (
         <>
@@ -17,10 +17,11 @@ function FriendLayout() {
                 </div>
                 <div className="h-full sm:mt-24 mt-16">
                     {DUMMY_FRIEND_LIST.map((it) => (
-                        <FriendList key={it.id} nickname={it.nickname} img={userImg}>추가</FriendList>
+                        <FriendList key={it.nickname} nickname={it.nickname} img={userImg} >추가</FriendList>
                     )
                     )}
                 </div>
+                
             </div>
         </>
     )

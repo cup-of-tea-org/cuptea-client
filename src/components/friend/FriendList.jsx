@@ -8,6 +8,11 @@ function FriendList({children, ...props}) {
    
     function handleClickModal() {
         dialogRef.current.showModal()
+        console.log('handleClickModal')
+    }
+
+    function handleCloseDialog() {
+        dialogRef.current.close()
     }
 
     return (
@@ -18,9 +23,11 @@ function FriendList({children, ...props}) {
                 <p className="text-center border-2 w-16 cursor-pointer rounded-xl hover:scale-105 transition hover:bg-white hover:text-black" onClick={handleClickModal}>{children}</p>
             </div>
             <ButtonClickModal
+            key={props.nickname}
             ref={dialogRef}
             isCompleted={isCompleted}
-            setIsCompleted={setIsCompleted} 
+            setIsCompleted={setIsCompleted}
+            handleCloseDialog={handleCloseDialog}
             >{props.nickname} 님을 삭제하시겠습니까?</ButtonClickModal>
         </div>
         

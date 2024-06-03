@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router-dom"
 
-function QuestButton({children, ...props}) {
+function QuestButton({children,  ...props}) {
 
-    const navigate = useNavigate();
-    
-    function handleNavigate() {
-        navigate(props.link);
+    const navigate = useNavigate()
+
+    function handleClickButton() {
+        navigate(props.link)
     }
 
     return (
         <>
-            <button type='button' className={props.css} onClick={handleNavigate}>
+            <button type='button' className={props.css} onClick={handleClickButton}>
                 {children}
             </button>
         </>

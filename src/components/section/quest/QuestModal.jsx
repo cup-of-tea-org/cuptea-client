@@ -1,13 +1,19 @@
-import { forwardRef, useEffect, useState } from "react"
-import closeImg from '../../../public/close.png'
-import alertImg from '../../../public/alert.png'
-import ModalButton from "./ModalButton"
+import { forwardRef } from "react";
+import closeImg from '../../../../public/close.png'
+import alertImg from '../../../../public/alert.png'
+import ModalButton from "../../common/ModalButton";
+import QuestModalButton from "./QuestModalButton";
 
-const ButtonClickModal = forwardRef(function ButtonClickModal({children, isCompleted, setIsCompleted, handleCloseDialog, ...props}, ref) {
+
+const QusetModal = forwardRef(function QuestModal({children, setIsCompleted,isCompleted, ...props }, ref) {
+
+    function handleCloseDialog() {
+        ref.current.close()
+    }
 
     return (
-        <>  
-             <dialog ref={ref} className=" transition bg-zinc-900 animate-openmenu w-10/12 sm:w-4/12 h-1/4  backdrop:bg-gray-300 backdrop:opacity-20 border-4 border-zinc-700 rounded-2xl overflow-hidden"  >
+        <>
+            <dialog ref={ref} className=" transition bg-zinc-900 animate-openmenu w-10/12 sm:w-4/12 h-1/4  backdrop:bg-gray-300 backdrop:opacity-20 border-4 border-zinc-700 rounded-2xl overflow-hidden"  >
                 <div className="relative cursor-pointer ">
                     <img src={closeImg} alt="닫기" className="w-6 h-6 absolute top-4 right-4 cursor-pointer border-2 rounded-xl hover:border-red-500" onClick={handleCloseDialog}/>
                 </div>
@@ -18,8 +24,8 @@ const ButtonClickModal = forwardRef(function ButtonClickModal({children, isCompl
                         <img src={alertImg} alt='알림' className="w-8 h-8 mb-4" />
                         <p>{children}</p>
                         <div>
-                            <ModalButton setIsCompleted={setIsCompleted}>Yes</ModalButton>
-                            <ModalButton handleCloseDialog={handleCloseDialog}>No</ModalButton>
+                            <QuestModalButton id={props.id}>Yes</QuestModalButton>
+                            <QuestModalButton>NO</QuestModalButton>
                         </div>
                     </div>
                 </div>}
@@ -29,4 +35,4 @@ const ButtonClickModal = forwardRef(function ButtonClickModal({children, isCompl
     )
 })
 
-export default ButtonClickModal
+export default QusetModal
