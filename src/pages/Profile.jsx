@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom'
-import userImg from '../../public/user.png'
 import ProfileInput from '../components/common/ProfileInput'
 import ProfileDetail from '../components/profile/ProfileDetail'
 import ProfileInputDetail from '../components/profile/ProfileInputDetail'
@@ -13,7 +12,7 @@ function Profile({children, ...props}) {
 
     return (
         <>
-            <div className='w-screen font-Jua mt-8 overflow-y-scroll'>    
+            <div className='w-screen font-Jua mt-8 '>    
                     <div className='flex justify-center mt-4'>
                         <ProfileInput type={'file'} id={'profile'}></ProfileInput>
                         <ProfileDetail css={'mx-4 mt-12 text-xl cursor-pointer'} link={`/${param.id}/profile`}>rabbit_0212</ProfileDetail>

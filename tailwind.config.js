@@ -21,6 +21,7 @@ export default {
         actSlideRight: 'slideRight 0.5s forwards',
         goUpLevel: 'goUpLevel 0.5s',
         goUpLevel2: 'goUpLevel2 0.5s',
+        goUpLevel3: 'goUpLevel2 0.5s',
         godownLevel: 'godownLevel 0.5s',
         goLeftToRight: 'goLeftToRight 1s',
         
@@ -49,6 +50,10 @@ export default {
         goUpLevel2: {
           from: { transform: 'translateY(30%)' },
           to: { transform: 'translateY(0%)' },
+        },
+        goUpLevel3: {
+          from: { transform: 'translateY(0%)' },
+          to: { transform: 'translateY(-100%)' },
         },
         godownLevel: {
           from: { transform: 'translateY(-40%)' },

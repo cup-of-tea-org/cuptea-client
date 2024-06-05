@@ -26,15 +26,15 @@ function MenuModal() {
     return (
         <div>
            
-            <div className="w-56 h-24 z-10 border fixed bg-gray-800 transition animate-openmenu ml-8 mt-24 flex flex-col justify-center items-center">
+            <div className="sm:w-56 sm:h-24 w-80 h-80 z-10 border fixed bg-gray-800 transition animate-openmenu ml-8 mt-24 flex flex-col justify-center items-center">
                 <div className="cursor-pointer ">
-                    <img src={closeImg} alt="닫기" className="w-4 h-4 absolute top-1 right-1 cursor-pointer border-2 rounded-2xl hover:border-red-500" onClick={handleCloseDialog}/>
+                    <img src={closeImg} alt="닫기" className="sm:w-4 sm:h-4 w-8 h-8 absolute top-1 right-1 cursor-pointer border-2 rounded-2xl hover:border-red-500" onClick={handleCloseDialog}/>
                 </div>
-                <div className="border w-full h-full text-center flex justify-center items-center hover:bg-gray-600 transition cursor-pointer">
+                <div className="border w-full h-full sm:text-sm text-2xl text-center flex justify-center items-center hover:bg-gray-600 transition cursor-pointer">
                     문제 신고
                     <img src={questionImg} alt='신고' className='w-4 h-4 ml-1 mb-1'/>
                 </div>
-                <div className=" w-full h-full border text-center flex justify-center items-center hover:bg-gray-600 transition cursor-pointer" onClick={handleMoreAboutModal}>
+                <div className=" w-full h-full border text-center sm:text-sm text-2xl flex justify-center items-center hover:bg-gray-600 transition cursor-pointer" onClick={handleMoreAboutModal}>
                     로그아웃
                     <img src={logoutImg} alt='신고' className='w-5 h-5 mb-1'/>
                     

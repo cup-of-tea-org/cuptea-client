@@ -2,10 +2,6 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import userImg from '../../../public/user.png';
 function ProfileInput({children, ...props}) {
 
-    const [image, setImage] = useRecoilState(joinProfileImgAtom);
-
-    
-
     return (
         <>
             <label htmlFor={props.id} className={props.css}>

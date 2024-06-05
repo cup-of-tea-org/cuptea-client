@@ -16,7 +16,7 @@ function MyDoQuest() {
 
     return (
         <>
-            <div className='w-screen font-Jua overflow-y-scroll'>
+            <div className='w-screen font-Jua '>
                 <section>
                     <div className='flex fixed w-full text-white bg-black-200 mt-4 pl-4'>
                         <img src={coffeeImg} alt='playImg' className='w-16 h-full cursor-pointer' onClick={handleNavigate}/>

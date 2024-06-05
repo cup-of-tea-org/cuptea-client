@@ -17,7 +17,7 @@ const LogoutModal = forwardRef(function LogoutModal({children}, ref) {
     
     return (
         <>
-            <dialog ref={ref} className=" transition bg-zinc-900 animate-openmenu w-4/12 h-1/4 backdrop:bg-gray-300 backdrop:opacity-20 border-4 border-zinc-700 rounded-2xl overflow-hidden"  >
+            <dialog ref={ref} className=" transition bg-zinc-900 animate-openmenu sm:w-4/12 sm:h-1/4 w-3/4 h-2/6  backdrop:bg-gray-300 backdrop:opacity-20 border-4 border-zinc-700 rounded-2xl overflow-hidden"  >
                 <div className="relative cursor-pointer ">
                     <img src={closeImg} alt="닫기" className="w-6 h-6 absolute top-4 right-4 cursor-pointer border-2 rounded-xl hover:border-red-500" onClick={closeDialog}/>
                 </div>

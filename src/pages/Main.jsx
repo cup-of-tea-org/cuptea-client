@@ -5,7 +5,7 @@ function MainLayout() {
     
     return (
         <>
-            <div className="flex h-screen bg-black text-zinc-50">
+            <div className="sm:flex h-screen bg-black text-zinc-50 overflow-y-auto">
                 <MainNav />
                 <Outlet />
             </div>

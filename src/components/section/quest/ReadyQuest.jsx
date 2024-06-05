@@ -15,7 +15,7 @@ function ReadyQuest() {
 
     return (
         <>
-            <div className='w-screen h-screen overflow-y-scroll font-Jua'>
+            <div className='w-screen h-screen font-Jua'>
                 <section className='flex flex-1 justify-center items-center h-72 text-center animate-godownLevel'>
                     <img src={questionImg} alt='questionImage' className='w-72 mt-12'/>
                 </section>

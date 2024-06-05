@@ -21,7 +21,7 @@ function CupTeaRoom({...props}) {
     return (
         <div className='w-full' key={props.id}>
             <div>
-                <div className='flex justify-center items-center my-8 mx-12 flex-col md:flex-row'>
+                <div className='flex justify-center items-center my-8 mx-12 flex-col md:flex-row animate-openmenu'>
                     <h1 className='w-80 text-lg sm:relative'>{props.name}
                     {props.state === 'completed' && <img src={completeImg} alt={'완료'} className='w-4 h-4 inline mx-4 mb-1'/>}
                     </h1>

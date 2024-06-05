@@ -11,16 +11,16 @@ function Home({children, ...props}) {
 
     return (
         <>
-            <div className='w-screen overflow-y-scroll font-Jua '>
-                <ul className='flex flex-1 justify-between items-center sm:px-24 mt-8 sm:h-20'>
+            <div className='w-screen  font-Jua'>
+                <ul className='flex h-0 justify-between items-center sm:px-24 sm:pt-8 sm:h-1/4 invisible sm:visible'>
                     {DUMMY_USER.map((it) => (
                         <ReadyUser key={it.id} id={it.id} img={it.img ?? userImg} nickname={it.nickname} link={`:${it.id}/visitors`}></ReadyUser>
                         ))}
                 </ul>
-                <section className='flex h-0 sm:flex sm:flex-1 sm:justify-between sm:items-center sm:h-72 text-center sm:flex-row  animate-goLeftToRight'>
+                <section className='flex-row w-full h-4/4 sm:flex justify-center items-center sm:justify-between sm:items-center mt-12 sm:h-2/4 text-center sm:flex-row  animate-goUpLevel3'>
                     <MainSection img={playImg} nav={'quest'}>Play!</MainSection>
                     <MainSection img={coffeeImg} nav={':id/cuptea'}>My CupTea</MainSection>
-                    <MainSection img={alarmImg} nav={'alarm'} isModal={true}>알림</MainSection>
+                    <MainSection img={userImg} nav={'/:id/profile'} >프로필</MainSection>
                 </section>
             </div>
         </>

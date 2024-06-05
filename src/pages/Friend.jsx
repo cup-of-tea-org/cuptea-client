@@ -10,7 +10,7 @@ function FriendLayout() {
 
     return (
         <>
-            <div className='w-screen font-Jua overflow-y-scroll'>
+            <div className='w-screen font-Jua overflow-y-scroll animate-openmenu'>
                 <div className='flex fixed w-full text-white bg-black-200 mt-4 pl-4'>
                     <img src={friendImg} alt='친구 추가 로고' className='w-16 h-full '/>
                     <h1 className='mt-5 text-xl pl-4'>친구 추가</h1>
