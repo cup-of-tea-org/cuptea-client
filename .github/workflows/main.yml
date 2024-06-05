@@ -68,11 +68,11 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.PROJECT_NAME }}
         
       # Docker Hub push
       - name: DockerHub Push
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.PROJECT_NAME }}
 
  
       - name: Pull and restart Docker Container
@@ -82,11 +82,11 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           script: |
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{secrets.PROJECT_NAME}}
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}:${{secrets.PROJECT_NAME}}
             sudo docker rm -f ${{ secrets.PROJECT_NAME }}
-            sudo docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
-            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }} 
+            sudo docker rmi ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.PROJECT_NAME }}
+            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.PROJECT_NAME }} 
 
             sudo docker run -p ${{ secrets.PORT }}:${{ secrets.PORT }} \
             --name ${{ secrets.PROJECT_NAME }} \
-            -d ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
+            -d ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.PROJECT_NAME }}
