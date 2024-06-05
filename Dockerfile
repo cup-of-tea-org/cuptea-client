@@ -2,19 +2,21 @@ FROM node:lts as build
 WORKDIR /app
 COPY package.json .
 RUN npm i
-COPY . .
+COPY . ./
+RUN npm ci
+
+COPY . ./
 RUN npm run build
 
-FROM nginx:stable-alpine
+FROM nginx:1.19.0
 
-# nginx의 기본 설정을 삭제하고 앱에서 설정한 파일을 복사
-RUN rm -rf /etc/nginx/conf.d
-COPY conf /etc/nginx
+COPY conf/conf.d/default.conf /etc/nginx/conf.d/default.conf
+RUN rm -rf ./usr/share/nginx/html/*
 
 # 위 스테이지에서 생성한 빌드 결과를 nginx의 샘플 앱이 사용하던 폴더로 이동
-COPY --from=build /app /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html/
 
-EXPOSE 80
+EXPOSE 3000
 
 # nginx 실행
 CMD [ "nginx", "-g", "daemon off;" ] 
