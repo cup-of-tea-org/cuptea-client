@@ -62,26 +62,28 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       # Docker 이미지 빌드
-      - name: Docker Image Build
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }} .
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
         
-      # Docker Hub push
-      - name: DockerHub Push
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
 
  
       - name: Pull and restart Docker Container
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.6
         with:
           key: ${{ secrets.EC2_KEY }}
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           script: |
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{secrets.PROJECT_NAME}}
+            docker pull sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
             sudo docker rm -f ${{ secrets.PROJECT_NAME }}
-            sudo docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
-            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }} 
+            sudo docker rmi sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
+            sudo docker pull sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
 
             sudo docker run -p ${{ secrets.PORT }}:${{ secrets.PORT }} \
             --name ${{ secrets.PROJECT_NAME }} \
-            -d ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }}
+            -d sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
