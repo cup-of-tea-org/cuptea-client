@@ -68,7 +68,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.PROJECT_NAME }}:1.0.0
+          tags: sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
         
 
  
