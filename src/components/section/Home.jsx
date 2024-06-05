@@ -11,7 +11,7 @@ function Home({children, ...props}) {
 
     return (
         <>
-            <div className='w-screen  font-Jua'>
+            <div className='w-screen font-Jua'>
                 <ul className='flex h-0 justify-between items-center sm:px-24 sm:pt-8 sm:h-1/4 invisible sm:visible'>
                     {DUMMY_USER.map((it) => (
                         <ReadyUser key={it.id} id={it.id} img={it.img ?? userImg} nickname={it.nickname} link={`:${it.id}/visitors`}></ReadyUser>

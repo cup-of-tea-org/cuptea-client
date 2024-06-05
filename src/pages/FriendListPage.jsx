@@ -12,7 +12,7 @@ function FriendListPage() {
                     <img src={friendImg} alt='친구 추가 로고' className='w-16 h-full '/>
                     <h1 className='mt-5 text-xl pl-4'>친구 목록</h1>
                 </div>
-                <div className="h-full sm:mt-24 mt-16">
+                <div className="h-full sm:mt-28 mt-20 text-xl">
                     {DUMMY_FRIEND_LIST.map((it) => (
                         <FriendList key={it.id} nickname={it.nickname} img={userImg}>삭제</FriendList>
                     )

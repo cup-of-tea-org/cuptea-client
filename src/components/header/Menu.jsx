@@ -22,7 +22,7 @@ function Menu({children, ...props}) {
 
     return (
         <>  
-            <li className="mt-4 cursor-pointer hover:bg-neutral-800 sm:w-40 sm: hover:scale-105 rounded-2xl transition " key={props.key} onClick={handleNavigate}>
+            <li className="mt-6 cursor-pointer hover:bg-neutral-800 sm:w-40 sm:text-lg sm: hover:scale-105 rounded-2xl transition " key={props.key} onClick={handleNavigate}>
                 <img src={props.img} alt="menu" className="w-6 h-6  sm:w-8 sm:h-8 inline transition hover:scale-105 z-auto "/>
                 <div className="inline ">{children}</div>
             </li>

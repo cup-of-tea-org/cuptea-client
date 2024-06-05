@@ -15,23 +15,23 @@ function Profile({children, ...props}) {
             <div className='w-screen font-Jua mt-8 '>    
                     <div className='flex justify-center mt-4'>
                         <ProfileInput type={'file'} id={'profile'}></ProfileInput>
-                        <ProfileDetail css={'mx-4 mt-12 text-xl cursor-pointer'} link={`/${param.id}/profile`}>rabbit_0212</ProfileDetail>
+                        <ProfileDetail css={'mx-4 mt-12 text-2xl cursor-pointer'} link={`/${param.id}/profile`}>rabbit_0212</ProfileDetail>
                     </div>
-                    <div className='sm:h-16 h-12 flex justify-center items-center gap-8 text-sm text-center'>
+                    <div className='sm:h-24 h-16 flex justify-center items-center gap-8 text-center text-lg'>
                         <ProfileDetail count={2} css={'cursor-pointer transition hover:scale-110'} link={`/${param.id}/my-cuptea`}>컵티</ProfileDetail >
                         <ProfileDetail count={4} css={'cursor-pointer transition hover:scale-110'} link={`/${param.id}/visitors`}>방명록</ProfileDetail>
                         <ProfileDetail count={13} css={'cursor-pointer transition hover:scale-110'} link={`/${param.id}/friendList`}>친구</ProfileDetail>
                     </div>
-                    <div className='h-80 flex flex-col justify-center items-center sm:mt-12 mt-16'>
+                    <div className='h-80 flex flex-col justify-center items-center sm:mt-20 mt-16'>
                         <ProfileInputDetail id={'nickname'} type={'text'}>Nickname</ProfileInputDetail>
                         <ProfileInputDetail id={'email'} type={'email'}>Email</ProfileInputDetail>
                         <ProfileInputDetail id={'phone'} type={'text'}>Phone</ProfileInputDetail>
-                        <div className='h-16 text-lg items-center'>
+                        <div className='h-16 text-lg items-center sm:mt-4'>
                             <ProfileSelectBox list={list}>Interest</ProfileSelectBox>
                             <DateBox id={'birthday'}>Birthday</DateBox>
                         </div>
-                        <div className='mt-12 flex justify-center w-80'>
-                            <button type='button' className='bg-black border-2 w-20 h-8 rounded-xl text-sm transition hover:bg-white hover:text-black'>프로필 수정</button>
+                        <div className='mt-16 flex justify-center w-80'>
+                            <button type='button' className='bg-black border-2 w-24 h-12 rounded-xl text-sm transition hover:bg-white hover:text-black'>프로필 수정</button>
                         </div>
                     </div>
             </div>

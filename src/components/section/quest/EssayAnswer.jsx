@@ -6,7 +6,7 @@ function EssayAnswer({OnSelect, id}) {
 
     return (
         <>
-            <div className="h-full">
+            <div className="h-full text-lg">
                 <label htmlFor={id} className="block"></label>
                 <textarea 
                     id={id} 

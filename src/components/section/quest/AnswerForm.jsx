@@ -47,7 +47,7 @@ function AnswerForm() {
 
     if (activeQuestionIndex > 4) {
         return (
-            <div className='w-screen font-Jua flex justify-center items-center'>
+            <div className='w-screen font-Jua flex justify-center items-center mt-16'>
                 <QuestionResult answers={userAnswers} questions={DUMMY_QUESTIONS}/>
             </div>
         )
@@ -62,8 +62,8 @@ function AnswerForm() {
                     <img src={questExImg} alt='문제' className={imgCss}/>                           
                     <div className='w-full h-3/6 mt-12'>
                         <div className='h-1/4 mt-4 sm:mx-12 flex flex-col justify-center items-center rounded-xl '>
-                            <div className='mt-24'>
-                                <h1 className='text-3xl mb-8'>{`QUIZ_${activeQuestionIndex + 1} : ${DUMMY_QUESTIONS[activeQuestionIndex].question}`}</h1>
+                            <div className='sm:mt-32 mt-12'>
+                                <h1 className='text-3xl mb-8 mx-8'>{`QUIZ_${activeQuestionIndex + 1} : ${DUMMY_QUESTIONS[activeQuestionIndex].question}`}</h1>
                                 {showAnswers ? (DUMMY_QUESTIONS[activeQuestionIndex].type === 'multiple' ? 
                                 <MultipleAnswer key={DUMMY_QUESTIONS[activeQuestionIndex].id} 
                                                 answers={DUMMY_QUESTIONS[activeQuestionIndex].answers}

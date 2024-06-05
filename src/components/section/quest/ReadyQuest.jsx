@@ -23,17 +23,17 @@ function ReadyQuest() {
                         누구에게 질문할까요?
                 </article>
                 <div>
-                    <ul className='flex flex-wrap sm:flex-1 justify-between items-center px-12 sm:px-12 mt-12 transition'>
+                    <ul className='flex flex-wrap sm:gap-0 gap-1 sm:flex-1 justify-between items-center px-12 sm:px-12 mt-12 transition'>
                         {DUMMY_USER2.map((it) => (
                             <ReadyUser key={it.id} id={it.id} img={it.img ?? userImg} nickname={it.nickname} link={`/quest/:${it.id}`}></ReadyUser>
                         ))}
                     </ul>
                 </div>
-                <div className='flex justify-center pt-12'>
+                <div className='flex justify-center pt-12 text-2xl sm:mt-8'>
                     컵티를 보낼 친구를 클릭해주세요!
                 </div>
-                <div className='flex justify-center items-center mt-12 '>
-                    <button type='button' className='text-sm w-16 border-2 border-gray-800 rounded-xl hover:border-blue-500 transition hover:scale-105'>Next</button>
+                <div className='flex justify-center items-center mt-8'>
+                    <button type='button' className='text-xl w-32 border-2 sm:mt-8 border-gray-800 rounded-xl hover:border-blue-500 transition hover:scale-105'>Next</button>
                 </div>
             </div>
         </>

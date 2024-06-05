@@ -6,7 +6,7 @@ function ProfileSelectBox({children, ...props}) {
         <div className="flex items-center">  
             <label htmlFor={props.id} className="text-2xl mr-8">{children}</label>
             <select id={props.id} 
-                    className="text-white text-sm w-32 h-6 bg-black border-white border-2 text-center rounded-md hover:border-blue-500 transition"
+                    className="text-white text-lg w-32 h-8 bg-black border-white border-2 text-center rounded-md hover:border-blue-500 transition"
             >
                 {children}
                 {   

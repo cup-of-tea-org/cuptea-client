@@ -33,11 +33,11 @@ function MainNav() {
 
     return (
         <header className="font-Jua sm:h-full h-24 w-full sm:w-2/6 flex-col sm:border-r-2 border-gray-500 sm:flex" >
-            <div className="text-4xl pt-4 px-4 sm:p-0 sm:my-12 sm:mb-4 sm:justify-center sm:items-center sm:flex sm:cursor-pointer relative font-Dancing text-center" onClick={navigateHome} >
+            <div className="text-5xl pt-4 px-4 sm:p-0 sm:my-12 sm:mb-4 sm:justify-center sm:items-center sm:flex sm:cursor-pointer relative font-Dancing text-center" onClick={navigateHome} >
                     CupTea
                     <img src={moreMenuImg} alt="menu" className="w-8 h-8 sm:w-8 sm:h-8 inline transition hover:scale-105 z-auto absolute top-4 right-2 sm:hidden" onClick={() => {setIsModal(true)}}/>
             </div>
-            <div className="sm:flex flex-col text-sm sm:mt-12 w-full sm:justify-start sm:ml-8 sm:w-40">
+            <div className="sm:flex flex-col text-sm sm:mt-24 w-full sm:justify-start sm:ml-12 sm:w-40">
                 <ul className='w-full flex sm:flex-col justify-center gap-2 sm:gap-0'>
                     <Menu img={homeImg} key={'home'} link={'/'} >홈</Menu>
                     <Menu img={searchImg} key={'search'} link={':id/my-cuptea'}>내 컵티</Menu>
@@ -49,7 +49,7 @@ function MainNav() {
 
             </div>
             {isModal && <MenuModal />}
-            <div className='flex flex-1 text-sm my-12 mt-32 justify-start ml-8 w-full invisible sm:visible'>
+            <div className='flex flex-1 text-sm my-12 mt-32 justify-start ml-12 w-full invisible sm:visible'>
                 <ul>
                     <Menu img={userImg} key={'profile'} link={':id/profile'}>프로필</Menu>    
                     <Menu img={moreMenuImg} key={'더보기'}>더 보기</Menu>

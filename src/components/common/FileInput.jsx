@@ -1,7 +1,7 @@
 function FileInput({children, ...props}) {
     return (
         <div className="mt-4">
-            <label htmlFor={props.id} className="text-center pb-2 gap-2 ">
+            <label htmlFor={props.id} className="text-center pb-2 gap-2 sm:text-2xl ">
                 {children} 
                 <img src={props.img} 
                 alt='썸네일' 

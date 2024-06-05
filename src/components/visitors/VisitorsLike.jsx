@@ -24,7 +24,7 @@ function VisitorsLike({children, ...props}) {
     return (
         <>
             <div className={props.css}>
-                <img src={isClickedLike ? fillHeartImg : likeImg} alt='좋아요' className={isClickedLike ? 'sm:w-5 sm:h-5 sm:ml-2 ml-2 w-8 h-8 cursor-pointer mr-1': 'sm:w-6 sm:h-6 sm:ml-2 ml-2 w-8 h-8 cursor-pointer'} onClick={alreadyClicked ? handleAlreadyClicked : handleAddLike}/>
+                <img src={isClickedLike ? fillHeartImg : likeImg} alt='좋아요' className={isClickedLike ? 'sm:w-6 sm:h-6 sm:ml-2 ml-2 w-8 h-8 cursor-pointer mr-1': 'sm:w-8 sm:h-8 sm:ml-2 ml-2 w-8 h-8 cursor-pointer'} onClick={alreadyClicked ? handleAlreadyClicked : handleAddLike}/>
                 <p>{clickLike}</p>
             </div>
         </>

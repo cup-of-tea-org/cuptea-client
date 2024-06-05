@@ -6,7 +6,7 @@ function JoinSelectBox({children, ...props}) {
         <>  
             <label htmlFor={props.id} className="pr-5 text-2xl">{children}</label>
             <select id={props.id} 
-                    className="text-white text-sm w-32 h-6 bg-black border-white border-2 text-center rounded-md hover:border-blue-500 transition"
+                    className="text-white sm:text-lg w-32 sm:h-8 h-6 bg-black border-white border-2 text-center rounded-md hover:border-blue-500 transition"
             >
                 {children}
                 {   
