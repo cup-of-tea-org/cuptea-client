@@ -27,16 +27,16 @@ jobs:
       # 해당 프로젝트의 node_modules가 변했는지 안 변했는지를 이용해서
       # 모듈 변화가 있을 때만 npm install을 해줄 수도 있다.
       # push할 때마다 npm을 install 해야할까? 아니다.
-      - name: Cache node modules
-      # 그걸 제공하는 Action도 있다.
-        uses: actions/cache@v2.1.8
-        # 해당 step을 대표하는 id를 설정할 수도 있다. 해당 값은 뒤의 step에서 사용한다.
-        id: cache
-        with:
-          # node_modules라는 폴더를 검사하여
-          path: node_modules
-          # 아래 키값으로 cache가 돼있는지 확인한다.
-          key: npm-packages-${{ hashFiles('**/package-lock.json') }}
+      # - name: Cache node modules
+      # # 그걸 제공하는 Action도 있다.
+      #   uses: actions/cache@v2.1.8
+      #   # 해당 step을 대표하는 id를 설정할 수도 있다. 해당 값은 뒤의 step에서 사용한다.
+      #   id: cache
+      #   with:
+      #     # node_modules라는 폴더를 검사하여
+      #     path: node_modules
+      #     # 아래 키값으로 cache가 돼있는지 확인한다.
+      #     key: npm-packages-${{ hashFiles('**/package-lock.json') }}
 
         # 위 step에서 node_modules에 대한 cache 검사를 했다.
         # 만약 모듈에 변한 게 있다면 `npm install`을 실행하고 아니면 해당 step을 건너뛰게 된다.
@@ -47,7 +47,6 @@ jobs:
         # 그 값이 true가 아닐 때만 npm install을 한다.
         # https://fe-developers.kakaoent.com/2022/220106-github-actions/
       - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
 
       - name: Build
