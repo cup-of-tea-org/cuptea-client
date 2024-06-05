@@ -12,7 +12,7 @@ RUN rm -rf /etc/nginx/conf.d
 COPY conf /etc/nginx
 
 # 위 스테이지에서 생성한 빌드 결과를 nginx의 샘플 앱이 사용하던 폴더로 이동
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app /usr/share/nginx/html
 
 EXPOSE 80
 
