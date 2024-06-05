@@ -24,7 +24,6 @@ jobs:
         with:
           node-version: lts/Hydrogen
 
-	
       # 해당 프로젝트의 node_modules가 변했는지 안 변했는지를 이용해서
       # 모듈 변화가 있을 때만 npm install을 해줄 수도 있다.
       # push할 때마다 npm을 install 해야할까? 아니다.
