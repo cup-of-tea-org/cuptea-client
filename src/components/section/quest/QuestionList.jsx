@@ -17,7 +17,7 @@ function QuestionList() {
                         <img src={coffeeImg} alt='playImg' className='w-16 h-full '/>
                         <h1 className='mt-5 text-xl pl-4'>{param.id + ' 님에게 보내는 컵티 목록'}</h1>
                     </div>
-                    <div className='flex flex-col w-full justify-center items-center py-20'>
+                    <div className='flex flex-col w-full justify-center items-center py-20 animate-openmenu'>
                         {DUMMY_CUPTEAS.map((it) => (
                             <CupTeaRoom key={it.id} name={it.name} image={Dummy_Image} count={it.count} link={`/:${it.id}/:roomNum/singleQuestForm`}></CupTeaRoom>
                         ))}

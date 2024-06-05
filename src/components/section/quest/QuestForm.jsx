@@ -18,7 +18,7 @@ function QuestForm() {
                     <img src={playImg} alt='playImg' className='w-16'/>
                     <h1 className='mt-5 text-xl'>질문지 만들기</h1>
                 </div>
-                <section className='w-full rounded-xl flex justify-center items-center'>
+                <section className='w-full rounded-xl flex justify-center items-center animate-openmenu'>
                     <form>
                         <QuestionNameInput>제목</QuestionNameInput>
                         <div className='flex justify-center items-center w-full mt-8'>
