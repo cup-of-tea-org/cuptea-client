@@ -68,7 +68,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}:cuptea-client:1.0.0
+          tags: ${{ secrets.PROJECT_NAME }}:1.0.0
         
 
  
@@ -79,11 +79,11 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           script: |
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}:cuptea-client:1.0.0
+            docker pull ${{ secrets.PROJECT_NAME }}:1.0.0
             sudo docker rm -f ${{ secrets.PROJECT_NAME }}
-            sudo docker rmi ${{ secrets.DOCKERHUB_USERNAME }}:cuptea-client:1.0.0
-            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}:cuptea-client:1.0.0
+            sudo docker rmi ${{ secrets.PROJECT_NAME }}:1.0.0
+            sudo docker pull ${{ secrets.PROJECT_NAME }}:1.0.0
 
             sudo docker run -p ${{ secrets.PORT }}:${{ secrets.PORT }} \
             --name ${{ secrets.PROJECT_NAME }} \
-            -d ${{ secrets.DOCKERHUB_USERNAME }}:cuptea-client:1.0.0
+            -d ${{ secrets.PROJECT_NAME }}:1.0.0
