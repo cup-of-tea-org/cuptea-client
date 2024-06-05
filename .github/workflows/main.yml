@@ -73,7 +73,7 @@ jobs:
 
  
       - name: Pull and restart Docker Container
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.6
         with:
           key: ${{ secrets.EC2_KEY }}
           host: ${{ secrets.EC2_HOST }}
