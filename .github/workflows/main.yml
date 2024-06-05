@@ -62,8 +62,13 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       # Docker 이미지 빌드
-      - name: Docker Image Build
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.PROJECT_NAME }} .
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/{{ secrets.PROJECT_NAME }}
         
       # Docker Hub push
       - name: DockerHub Push
