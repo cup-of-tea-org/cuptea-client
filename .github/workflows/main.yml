@@ -48,6 +48,9 @@ jobs:
 
       - name: Build
         run: npm run build
+        
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
       # https://docs.docker.com/build/ci/github-actions/#step-three-define-the-workflow-steps
       # Docker에 연결하여 이미지를 빌드하고 Hub에 푸시한다.
