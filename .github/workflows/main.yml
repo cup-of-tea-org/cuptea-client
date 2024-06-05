@@ -80,10 +80,10 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           script: |
             docker pull sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
-            sudo docker rm -f sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
+            sudo docker rm -f ${{ secrets.PROJECT_NAME }}:latest
             sudo docker rmi sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
             sudo docker pull sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
 
             sudo docker run -p ${{ secrets.PORT }}:${{ secrets.PORT }} \
-            --name sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest \
+            --name ${{ secrets.PROJECT_NAME }}:latest \
             -d sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
