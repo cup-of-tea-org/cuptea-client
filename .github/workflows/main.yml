@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.5.2
 
-	  # React 프로젝트이므로 해당 환경을 Node.js 위에서 실행하겠다고 명시한다.
+# React 프로젝트이므로 해당 환경을 Node.js 위에서 실행하겠다고 명시한다.
       # 마찬가지로 누군가 만들어 놓은 Action이다.
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.5.2
@@ -73,9 +73,9 @@ jobs:
       - name: Pull and restart Docker Container
         uses: appleboy/ssh-action@master
         with:
-          key: ${{ secrets.SSH_KEY }}
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
+          key: ${{ secrets.EC2_KEY }}
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
           script: |
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{secrets.PROJECT_NAME}}
             sudo docker rm -f ${{ secrets.PROJECT_NAME }}
