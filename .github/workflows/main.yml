@@ -68,11 +68,11 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}:cuptea-client
+          tags: cuptea-client:version1.0.0
         
-      # Docker Hub push
-      - name: DockerHub Push
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}:cuptea-client
+      # # Docker Hub push
+      # - name: DockerHub Push
+      #   run: docker push ${{ secrets.DOCKERHUB_USERNAME }}:cuptea-client
 
  
       - name: Pull and restart Docker Container
