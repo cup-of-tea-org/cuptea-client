@@ -1,7 +1,22 @@
-import { Outlet } from "react-router-dom"
+import { Outlet, useNavigate } from "react-router-dom"
 import MainNav from "../components/header/MainNav"
+import axios from "axios"
+import { useEffect } from "react";
 
 function MainLayout() {
+
+    const navigate = useNavigate();
+    console.log("navigate 실행")
+
+    useEffect(() => {
+        if (axios.defaults.headers.common["Authorization"] == null) {
+            navigate("/login");
+        }
+    },[])
+
+    
+
+   
     
     return (
         <>
