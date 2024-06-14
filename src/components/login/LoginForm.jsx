@@ -12,7 +12,7 @@ import DefaultCheckBox from "../common/DefaultCheckBox";
         <form>
             <LoginInput text={'text'} id={'id'} placeholder={'아이디를 입력해주세요...'}>ID</LoginInput>
             <LoginInput text={'password'} id={'password'} placeholder={'비밀번호를 입력해주세요...'}>Password</LoginInput>
-            <DefaultCheckBox>로그인 유지</DefaultCheckBox>
+            {/* <DefaultCheckBox>로그인 유지</DefaultCheckBox> */}
             <LoginButton css={loginMainButtonCss} ifTrue={false}>로그인</LoginButton>
             <LoginButton css={idPwCss} ifTrue={false}>비밀번호를 잊으셨나요?</LoginButton>
             <LoginButton css={kakao} img={kakaoPhoto} isSocial={true}></LoginButton>

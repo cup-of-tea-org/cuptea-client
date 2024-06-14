@@ -24,6 +24,8 @@ function LoginInput({children, ...props}) {
                 ref={ref}
                 placeholder={props.placeholder}
                 required/>
+            {props.text == 'id' ? <button type="button" className="block mt-2 text-xs bg-emerald-200 text-black w-20 h-6 border-white border-2 rounded-md hover:border-blue-500">아이디 중복검사</button> : null}
+            {props.text == 'email' ? <button type="button" className="block mt-2 text-xs bg-emerald-200 text-black w-20 h-6 border-white border-2 rounded-md hover:border-blue-500">이메일 인증</button> : null}
         </div>
     )
 }

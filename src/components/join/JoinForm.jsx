@@ -16,9 +16,9 @@ function JoinForm() {
             <div className="flex flex-col justify-center items-center mt-4">
                 <form>
                     <ProfileInput type={'file'} id={'profile'} css={loginInput}></ProfileInput>
-                    <LoginInput id={'nickname'} text={'text'} placeholder={'닉네임을 입력해주세요...'}>Nickname</LoginInput>
+                    <LoginInput id={'id'} text={'id'} placeholder={'사용하실 아이디를 입력해주세요...'}>ID</LoginInput>
+                    <LoginInput id={'password'} text={'password'} placeholder={'사용하실 패스워드를 입력해주세요...'}>Password</LoginInput>
                     <LoginInput id={'email'} text={'email'} placeholder={'이메일을 입력해주세요...'}>Email</LoginInput>
-                    <button type="button" className="text-xs bg-emerald-200 text-black w-20 h-6 border-white border-2 rounded-md hover:border-blue-500">이메일 인증</button>
                     <LoginInput id={'phone'} text={'phone'} placeholder={'번호를 입력해주세요...'}>Phone</LoginInput>
                     <JoinSelectBox list={interest} id={'interest'}>Interest</JoinSelectBox>
                     <DateBox id={'생년월일'}>Birthday</DateBox>

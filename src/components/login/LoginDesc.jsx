@@ -17,7 +17,7 @@ function LoginDesc() {
                 <div className="text-3xl sm:text-5xl text-center">CupTea와 함께</div>
             </div>
             <LoginForm />
-            <div className="pt-4 text-sm">
+            <div className="pt-8 text-sm">
                 계정이 없으신가요? &nbsp;
                 <button 
                 className="text-sky-500  hover:scale-105 transition underline"
