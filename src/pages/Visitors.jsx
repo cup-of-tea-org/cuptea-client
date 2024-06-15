@@ -3,8 +3,19 @@ import { DUMMY_USER } from '../components/common/commonjs/DummyUser'
 import { DUMMY_VISITORS } from '../components/common/commonjs/DummyVisitors'
 import ReadyUser from '../components/section/quest/ReadyUser'
 import VisitorsDesc from '../components/visitors/VisitorsDesc'
+import { useNavigate } from 'react-router-dom'
 
 function Visitors() {
+
+    const navigate = useNavigate();
+
+    // useEffect(() => {
+    //     if (axios.defaults.headers.common["Authorization"] == null) {
+    //         navigate("/login");
+    //     }
+    // },[])
+
+    
     return (
         <>  
             <div className='w-screen font-Jua mt-8 overflow-y-scroll '>

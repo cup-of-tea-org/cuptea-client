@@ -6,13 +6,12 @@ import { useEffect } from "react";
 function MainLayout() {
 
     const navigate = useNavigate();
-    console.log("navigate 실행")
 
-    useEffect(() => {
-        if (axios.defaults.headers.common["Authorization"] == null) {
-            navigate("/login");
-        }
-    },[])
+    // useEffect(() => {
+    //     if (axios.defaults.headers.common["Authorization"] == null) {
+    //         navigate("/login");
+    //     }
+    // },[])
 
     
 

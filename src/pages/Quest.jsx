@@ -1,11 +1,18 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import questExImg from '../assets/questEx.jpg'
 import QuestButton from '../components/section/quest/QuestButton'
+import axios from 'axios'
 
 function QuestLayout({props}) {
 
     const navigate = useNavigate()
     const {id, roomId} = useParams();
+
+    // useEffect(() => {
+    //     if (axios.defaults.headers.common["Authorization"] == null) {
+    //         navigate("/login");
+    //     }
+    // },[])
 
 
     return (

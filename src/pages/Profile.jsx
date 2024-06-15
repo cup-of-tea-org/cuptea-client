@@ -12,7 +12,7 @@ function Profile({children, ...props}) {
 
     return (
         <>
-            <div className='w-screen font-Jua mt-8 '>    
+            <div className='w-screen font-Jua mt-24 '>    
                     <div className='flex justify-center mt-4'>
                         <ProfileInput type={'file'} id={'profile'}></ProfileInput>
                         <ProfileDetail css={'mx-4 mt-12 text-2xl cursor-pointer'} link={`/${param.id}/profile`}>rabbit_0212</ProfileDetail>

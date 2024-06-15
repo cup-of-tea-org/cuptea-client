@@ -1,11 +1,20 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import friendImg from '../../public/friend.png'
 import { DUMMY_FRIEND_LIST } from "../components/common/commonjs/DummyFriendList";
 import userImg from '../../public/user.png'
 import FriendList from "../components/friend/FriendList";
 import { useRef } from "react";
+import axios from "axios";
 
 function FriendLayout() {
+
+    const navigate = useNavigate();
+
+    // useEffect(() => {
+    //     if (axios.defaults.headers.common["Authorization"] == null) {
+    //         navigate("/login");
+    //     }
+    // },[])
 
 
     return (
