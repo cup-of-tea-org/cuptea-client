@@ -7,11 +7,11 @@ function MainLayout() {
 
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     if (axios.defaults.headers.common["Authorization"] == null) {
-    //         navigate("/login");
-    //     }
-    // },[])
+    useEffect(() => {
+        if (axios.defaults.headers.common["Authorization"] == null) {
+            navigate("/login");
+        }
+    },[])
 
     
 
