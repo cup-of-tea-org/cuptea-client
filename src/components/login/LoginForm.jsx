@@ -3,10 +3,14 @@ import kakaoPhoto from '../../../public/kakao.png'
 import googlePhoto from '../../../public/google.png'
 import LoginInput from "../common/LoginInput";
 import { loginMainButtonCss, idPwCss, kakao, google } from "../../css/LoginCss";
-import DefaultCheckBox from "../common/DefaultCheckBox";
+import { useRecoilValue } from "recoil";
+import { JoinAtoms } from "../../recoil/atoms/JoinAtoms";
 
+function LoginForm() {
 
-    function LoginForm() {
+    
+    const joinAtom = useRecoilValue(JoinAtoms);
+
 
     return (
         <form>

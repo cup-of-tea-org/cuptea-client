@@ -4,10 +4,11 @@ import App from './App.jsx'
 import './index.css'
 import { RecoilRoot } from 'recoil'
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <RecoilRoot>
     <React.StrictMode>
-      <App />
+        <App />
     </React.StrictMode>
   </RecoilRoot>
 )
