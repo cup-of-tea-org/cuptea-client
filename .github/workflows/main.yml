@@ -63,8 +63,10 @@ jobs:
 
       # Docker 이미지 빌드
 
+      
+
       - name: Build docker image
-        run: docker build . --file Dockerfile --tag ${{ secrets.EC2_HOST }}:5000/${{ secrets.PROJECT_NAME }}:latest .
+        run: docker build -t ${{ secrets.EC2_HOST }}:5000/${{ secrets.PROJECT_NAME }}:latest .
       
         # Docker 이미지 Push
       - name: Push docker image
