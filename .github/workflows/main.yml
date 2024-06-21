@@ -3,7 +3,8 @@ on:
   push:
     branches: [master]
   pull_request:
-    branches: [ "master" ]# main 브랜치에 push 발생하면 트리거
+    branches: [ "master" ]
+    # main 브랜치에 push 발생하면 트리거
 
 jobs:
   deploy:
@@ -67,7 +68,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
+          tags: ${{ secrets.EC2_HOST }}:5000/${{ secrets.PROJECT_NAME }}:latest
         
 
  
@@ -78,11 +79,11 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           script: |
-            docker pull sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
+            docker pull ${{ secrets.EC2_HOST }}:5000/${{ secrets.PROJECT_NAME }}:latest
             sudo docker rm -f ${{ secrets.PROJECT_NAME }}
-            sudo docker rmi sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
-            sudo docker pull sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
+            sudo docker rmi ${{ secrets.EC2_HOST }}:5000/${{ secrets.PROJECT_NAME }}:latest
+            sudo docker pull ${{ secrets.EC2_HOST }}:5000/${{ secrets.PROJECT_NAME }}:latest
 
             sudo docker run -p ${{ secrets.PORT }}:${{ secrets.PORT }} \
             --name ${{ secrets.PROJECT_NAME }} \
-            -d sgwonbe212359/${{ secrets.PROJECT_NAME }}:latest
+            -d ${{ secrets.EC2_HOST }}:5000/${{ secrets.PROJECT_NAME }}:latest
