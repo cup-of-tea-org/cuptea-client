@@ -50,13 +50,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-        with:
-          config-inline: |
-              [${{ secrets.EC2_HOST }}:5000]
-                http = true
-                insecure = true
+      - name: Insecure Docker Repository
+        run: |
+          sudo truncate -s-2 /etc/docker/daemon.json
+          echo ", \"insecure-registries\": [\"${{ secrets.EC2_HOST}}\"]}" | sudo tee -a /etc/docker/daemon.json
+          sudo systemctl restart docker
 
       # https://docs.docker.com/build/ci/github-actions/#step-three-define-the-workflow-steps
       # Docker에 연결하여 이미지를 빌드하고 Hub에 푸시한다.
