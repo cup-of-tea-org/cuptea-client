@@ -2,6 +2,7 @@ import { useRecoilValue } from "recoil"
 import LoginForm from "./LoginForm";
 import { useNavigate } from "react-router-dom";
 
+// TODO 로그인 구현
 function LoginDesc() {
 
     const navigate = useNavigate();
@@ -10,6 +11,7 @@ function LoginDesc() {
         navigate("/login/join");
     }
 
+    
     return (
         <div className="flex flex-col flex-1 justify-center items-center font-Jua ">
             <div className="my-4">
