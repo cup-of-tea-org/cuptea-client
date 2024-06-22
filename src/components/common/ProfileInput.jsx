@@ -30,8 +30,6 @@ function ProfileInput({children, ...props}) {
         setFormData({
             profileImage: e.target.files[0]
         })
-
-        
     }
     
 

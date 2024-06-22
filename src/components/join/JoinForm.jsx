@@ -65,23 +65,29 @@ function JoinForm() {
                 console.log(joinFormData);
                 const request = await axios({
                     method: 'post',
-                    url: 'http://localhost:9090/service-api/open-api/join',
+                    url: 'http://localhost:9090/service-api/open-api/user',
                     data: requestBody,
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     }
                 })
                 if (request.status == 201) {
-                    Swal.fire({
+                    const result = await Swal.fire({
                         icon: 'success',
                         title: '회원가입 성공',
                         text: '회원가입이 완료되었습니다.',
                         confirmButtonText: '확인'
-                });
+
+                })
+                    
                     reset();
-                    navigate('/login');
+                    if (result.isConfirmed) {
+                        navigate('/login');
+                    }
+                        
                 }
             }catch (error) {
+                console.log(error);
                 Swal.fire({
                     icon: 'error',
                     title: '회원가입 실패',
@@ -137,7 +143,7 @@ function JoinForm() {
             const jsonRequest = JSON.stringify(idValue);
             const response =  await axios({
                 method: 'post',
-                url: 'http://localhost:9090/service-api/open-api/join/id-check',
+                url: 'http://localhost:9090/service-api/open-api/user/validate-id',
                 data: jsonRequest, 
                 headers: {
                     "Content-Type": "application/json",
@@ -174,7 +180,7 @@ function JoinForm() {
             const email = JSON.stringify(emailValue);
             const response = await axios({
                 method: 'post',
-                url: 'http://localhost:9090/service-api/open-api/join/validate-email',
+                url: 'http://localhost:9090/service-api/open-api/user/validate-email',
                 data: email,
                 headers: {
                     'Content-Type': 'application/json',
@@ -213,7 +219,7 @@ function JoinForm() {
             console.log(request)
             const response = await axios({
                 method: 'post',
-                url: 'http://localhost:9090/service-api/open-api/join/validate-email-code',
+                url: 'http://localhost:9090/service-api/open-api/user/validate-email-code',
                 data: request,
                 headers: {
                     'Content-Type': 'application/json',
