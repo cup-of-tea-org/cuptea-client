@@ -18,6 +18,7 @@ import FriendListPage from './pages/FriendListPage'
 import QuestLayout from './pages/Quest'
 import AnswerForm from './components/section/quest/AnswerForm'
 import { dummyFunction } from './components/common/commonjs/DummyFunction'
+import FindIdPwPage from './pages/FindIdPwPage'
 
 
 
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
         path: 'join',
         element: <JoinDesc />
       },
+      {
+        path: 'findUser',
+        element: <FindIdPwPage></FindIdPwPage>
+      }
       
     ]
   }

@@ -3,7 +3,7 @@ import DateBox from "../common/DateBox";
 import LoginInput from "../common/LoginInput"
 import ProfileInput from "../common/ProfileInput";
 import JoinSelectBox from "./JoinSelectBox"
-import LoginButton from "../login/LoginButton";
+import JoinButton from "./JoinButton";
 import { idPwCss, loginMainButtonCss } from "../../css/LoginCss";
 import { loginInput } from "../../css/FormCss";
 import { JoinAtoms } from "../../recoil/atoms/JoinAtoms";
@@ -163,7 +163,17 @@ function JoinForm() {
                 });
             } 
         }catch (error) {
-            // 중복회원
+
+            if (error.response.status == 500) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error!!',
+                    text: "서버 에러입니다. 관리자에게 문의해주세요",
+                    confirmButtonText: '확인'
+                })
+                return;
+            }
+
             Swal.fire({
                 icon: 'error',
                 title: 'Error!!',
@@ -290,8 +300,8 @@ function JoinForm() {
                     <LoginInput id={'phone'} text={'phone'} placeholder={'번호를 - 없이 입력해주세요...'} join={'join'}>Phone</LoginInput>
                     <JoinSelectBox list={interest} id={'interest'}>Interest</JoinSelectBox>
                     <DateBox id={'생년월일'}>Birthday</DateBox>
-                    <LoginButton css={idPwCss + ' hover:border-emerald-300 cursor-pointer'} isSocial={false} isProvision={true}>약관보기</LoginButton>
-                    <LoginButton css={loginMainButtonCss + ' hover:border-emerald-300 cursor-pointer'} isSocial={false} isJoinButton={true} setIsSendData={setIsSendData}>회원가입</LoginButton>
+                    <JoinButton css={idPwCss + ' hover:border-emerald-300 cursor-pointer'} isSocial={false} isProvision={true}>약관보기</JoinButton>
+                    <JoinButton css={loginMainButtonCss + ' hover:border-emerald-300 cursor-pointer'} isSocial={false} isJoinButton={true} setIsSendData={setIsSendData}>회원가입</JoinButton>
                     {((showEmailCheckModal && emailValue !== '') && joinFormData[0].email !== '') && (
                             <dialog ref={emailCheckRef} className="transition bg-black text-white animate-openmenu w-4/12 h-2/4 backdrop:bg-gray-300 backdrop:opacity-20 flex flex-col justify-center items-center border-2 rounded-2xl ">
                                 <img src={logoImg} className="w-28 h-28"></img>

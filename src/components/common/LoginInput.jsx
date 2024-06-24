@@ -3,12 +3,14 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { joinSelector } from "../../recoil/selectors/JoinSelectors";
 import { useState } from "react";
 import { JoinAtoms } from "../../recoil/atoms/JoinAtoms";
+import { loginSelector } from "../../recoil/selectors/Loginselectors";
 import Swal from "sweetalert2";
 function LoginInput({children, ...props}) {
 
     const ref = useRef();
-    const setFormData = useSetRecoilState(joinSelector);
-    const formData = useRecoilValue(JoinAtoms);
+    const setJoinFormData = useSetRecoilState(joinSelector);
+    const joinFormData = useRecoilValue(JoinAtoms);
+    const setLoginFormData = useSetRecoilState(loginSelector);
     let [joinFormInput, setJoinFormInput] = useState('w-60 h-10 text-base px-1 bg-black border-2 border-slate-100 rounded-md hover:border-blue-500 transition placeholder:text-sm');
     const [message, setMessage] = useState('');
     // input 검증
@@ -35,7 +37,7 @@ function LoginInput({children, ...props}) {
                         setJoinFormInput('w-60 h-10 text-base px-1 bg-black border-2 border-red-400 rounded-md hover:border-red-400 transition placeholder:text-sm') ;
                     } else {
                         setMessage('')
-                        setFormData({password : ref.current.value});
+                        setJoinFormData({password : ref.current.value});
                         setJoinFormInput('w-60 h-10 text-base px-1 bg-black border-2 border-slate-100 rounded-md hover:border-blue-500 transition placeholder:text-sm');
                     }
                     break;
@@ -56,11 +58,15 @@ function LoginInput({children, ...props}) {
                         setJoinFormInput('w-60 h-10 text-base px-1 bg-black border-2 border-red-400 rounded-md hover:border-red-400 transition placeholder:text-sm') ;
                     } else {
                         setMessage('');
-                        setFormData({phone : ref.current.value});
+                        setJoinFormData({phone : ref.current.value});
                         setJoinFormInput('w-60 h-10 text-base px-1 bg-black border-2 border-slate-100 rounded-md hover:border-blue-500 transition placeholder:text-sm');
                     }
                     break;
             }
+        } else if (props.login === 'id') { // login인 경우
+            setLoginFormData({loginId : ref.current.value});
+        } else if (props.login === 'password') {
+            setLoginFormData({password : ref.current.value});        
         }
 }
 
@@ -80,9 +86,9 @@ function LoginInput({children, ...props}) {
     }
 
     const handleEmailCheckButton = () => {
-        console.log(formData.email);
+        console.log(joinFormData.email);
 
-        if (formData.email !== undefined) {
+        if (joinFormData.email !== undefined) {
             Swal.fire({
                 icon: 'success',
                 title: '이미 이메일 인증이 완료되었습니다.',
@@ -105,6 +111,17 @@ function LoginInput({children, ...props}) {
         props.setShowEmailCheckModal(true);
     }
 
+    const handleEnterKey = (e) => {
+        if (props.login === 'password') {
+            if (e.key === 'Enter') {
+                props.setLoginTrigger(prev => {
+                    return !prev;
+                
+                })
+            }
+        }
+    }
+
     return (
         <div className="my-2">
             <label 
@@ -119,6 +136,7 @@ function LoginInput({children, ...props}) {
                 onBlur={handleBlur}
                 ref={ref}
                 placeholder={props.placeholder}
+                onKeyDown={handleEnterKey}
                 required/>
             {(props.text == 'id' && message == '') ?
                 <button 

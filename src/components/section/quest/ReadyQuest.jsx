@@ -1,14 +1,6 @@
 import questionImg from '../../../../public/question.png'
-import { DUMMY_USER } from '../../common/commonjs/DummyUser'
 import userImg from '../../../../public/user.png'
-import LoginButton from '../../login/LoginButton'
-import { normal, normalWhite } from '../../../css/LoginCss'
-import QuestButton from './QuestButton'
-import { UserCss } from '../../../css/UserCss'
-import { useRecoilState } from 'recoil'
-import { UserClickedAtom, UserCssAtom } from '../../../recoil/atoms/UserAtoms'
 import { DUMMY_USER2 } from '../../common/commonjs/DummyUser2'
-import { useState } from 'react'
 import ReadyUser from './ReadyUser'
 
 function ReadyQuest() {
