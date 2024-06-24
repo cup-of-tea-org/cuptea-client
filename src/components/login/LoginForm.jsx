@@ -5,11 +5,11 @@ import { loginMainButtonCss, idPwCss, kakao, google } from "../../css/LoginCss";
 import { useRecoilValue, useResetRecoilState } from "recoil";
 import LoginButton from "./LoginButton";
 import { useEffect, useCallback, useState, useRef } from "react";
-import { loginSelector } from "../../recoil/selectors/Loginselectors";
 import Swal from "sweetalert2";
 import axios from "axios";
-import { LoginFormAtom } from "../../recoil/atoms/LoginAtoms";
+import { loginSelector } from '../../recoil/selectors/LoginSelectors';
 import { useNavigate } from "react-router-dom";
+import { LoginFormAtom } from '../../recoil/atoms/LoginAtoms';
 
 function LoginForm() {
 

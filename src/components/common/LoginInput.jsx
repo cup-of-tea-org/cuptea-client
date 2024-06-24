@@ -3,7 +3,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { joinSelector } from "../../recoil/selectors/JoinSelectors";
 import { useState } from "react";
 import { JoinAtoms } from "../../recoil/atoms/JoinAtoms";
-import { loginSelector } from "../../recoil/selectors/Loginselectors";
+import { loginSelector } from "../../recoil/selectors/LoginSelectors";
 import Swal from "sweetalert2";
 function LoginInput({children, ...props}) {
 
