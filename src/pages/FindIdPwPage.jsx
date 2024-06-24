@@ -1,6 +1,7 @@
 import { useState } from "react";
-import FindIdPwForm from "../components/login/FindIdForm";
 import FindIdForm from "../components/login/FindIdForm";
+import { useEffect } from "react";
+import searchImg from '../../public/search.png';
 import FindPwForm from "../components/login/FindPwForm";
 
 function FindIdPwPage() {
@@ -23,16 +24,21 @@ function FindIdPwPage() {
         setShowInput(type);
     }
 
+    useEffect(() => {
+        handleNavClick('id');
+    },[]);
+
     return (
         
-        <div className="flex flex-col flex-1 items-center mt-60 font-Jua">
+        <div className="flex flex-col flex-1 items-center mt-24 font-Jua">
+            <img src={searchImg} alt='아이디찾기' className="w-48 h-48 mb-8"/>
+
             <div className="w-3/4 h-16 rounded-xl bg-neutral-800">
                 <button className={idFindButtonCss} onClick={() => {handleNavClick('id')}}>아이디 찾기</button>
                 <button className={passwordFindButtonCss} onClick={() => {handleNavClick('password')}}>비밀번호 찾기</button>
             </div>
             {showInput === 'id' ?
-             <FindIdForm>이메일</FindIdForm> 
-                : <FindPwForm>아이디</FindPwForm>}
+             <FindIdForm id={'email'}>E-mail</FindIdForm> : <FindPwForm id={'id'}>ID</FindPwForm>}
             
         </div>
         
