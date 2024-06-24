@@ -1,7 +1,7 @@
 import { selector } from "recoil";
 import { LoginFormAtom } from "../atoms/LoginAtoms";
 
-export const loginSelector = selector({
+export const LoginSelector = selector({
     key: 'loginSelector',
     get: ({get}) => {
         return get(LoginFormAtom);
