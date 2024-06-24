@@ -1,4 +1,3 @@
-import JoinButton from "../join/JoinButton"
 import kakaoPhoto from '../../../public/kakao.png'
 import googlePhoto from '../../../public/google.png'
 import LoginInput from "../common/LoginInput";
@@ -11,7 +10,6 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { LoginFormAtom } from "../../recoil/atoms/LoginAtoms";
 import { useNavigate } from "react-router-dom";
-import logoImg from '../../../public/logo.png'
 
 function LoginForm() {
 
