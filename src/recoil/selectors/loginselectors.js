@@ -1,5 +1,5 @@
-import { LoginFormAtom } from "../atoms/LoginAtoms";
 import { selector } from "recoil";
+import { LoginFormAtom } from "../atoms/LoginAtoms";
 
 export const loginSelector = selector({
     key: 'loginSelector',

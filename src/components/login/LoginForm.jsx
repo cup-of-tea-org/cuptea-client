@@ -7,9 +7,9 @@ import LoginButton from "./LoginButton";
 import { useEffect, useCallback, useState, useRef } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
-import { loginSelector } from '../../recoil/selectors/LoginSelectors';
 import { useNavigate } from "react-router-dom";
 import { LoginFormAtom } from '../../recoil/atoms/LoginAtoms';
+import { loginSelector } from '../../recoil/selectors/LoginSelectors.js';
 
 function LoginForm() {
 
