@@ -19,6 +19,7 @@ import QuestLayout from './pages/Quest'
 import AnswerForm from './components/section/quest/AnswerForm'
 import { dummyFunction } from './components/common/commonjs/DummyFunction'
 import FindIdPwPage from './pages/FindIdPwPage'
+import NewPasswordForm from './components/login/NewPasswordForm'
 
 
 
@@ -105,8 +106,7 @@ const router = createBrowserRouter([
       {
         path: 'findUser',
         element: <FindIdPwPage></FindIdPwPage>
-      }
-      
+      },
     ]
   }
 ])
