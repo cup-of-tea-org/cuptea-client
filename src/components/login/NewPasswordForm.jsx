@@ -3,6 +3,8 @@ import coffeeImg from '../../../public/coffee.png'
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { IdAtom } from '../../recoil/atoms/LoginAtoms';
 
 function NewPasswordForm() {
 
@@ -10,16 +12,48 @@ function NewPasswordForm() {
     const [newPasswordCheckValue, setNewPasswordCheckValue] = useState('');
     const [isButtonClicked, setIsButtonClicked] = useState(false);
     const navigate = useNavigate();
+    const idValue = useRecoilValue(IdAtom);
 
     const handleNewPasswordInput = (e) => {
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d|.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$|^(?=.*[!@#$%^&*])(?=.*\d)[A-Za-z\d!@#$%^&*]{8,20}$/;
+        if (!passwordRegex.test(e.target.value)) {
+            Swal.fire({
+                title: '비밀번호 형식 오류',
+                text: '비밀번호는 영문자, 숫자, 특수문자 중 2가지를 포함한 8자 이상 20자 이하로 입력해주세요.',
+                icon: 'error',
+                confirmButtonText: '확인'
+            })
+            return;
+        }
         setNewPassword(e.target.value);
     }
 
     const handleNewPasswordInputCheck = (e) => {
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d|.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$|^(?=.*[!@#$%^&*])(?=.*\d)[A-Za-z\d!@#$%^&*]{8,20}$/;
+        if (!passwordRegex.test(e.target.value)) {
+            Swal.fire({
+                title: '비밀번호 형식 오류',
+                text: '비밀번호는 영문자, 숫자, 특수문자 중 2가지를 포함한 8자 이상 20자 이하로 입력해주세요.',
+                icon: 'error',
+                confirmButtonText: '확인'
+            })
+            return;
+        }
         setNewPasswordCheckValue(e.target.value);
     }
 
-    const handleButtonClick = () => {
+    const handleButtonClick = (e) => {
+
+        if (newPassword == '' || newPasswordCheckValue == '') {
+            Swal.fire({
+                title: '비밀번호 입력 오류',
+                text: '비밀번호를 입력해주세요.',
+                icon: 'error',
+                confirmButtonText: '확인'
+            })
+            return;
+        }
+
         if (newPassword != newPasswordCheckValue) {
             Swal.fire({
                 title: '비밀번호 불일치',
@@ -29,21 +63,14 @@ function NewPasswordForm() {
             })
             return;
         }
-        isButtonClicked(true);
+        setIsButtonClicked(true);
     }
 
-    useEffect(() => {
-        if (isButtonClicked) {
-            newPasswordRequest();
-        }
-        return () => {
-            isButtonClicked(false);
-        }
-    }, [newPasswordRequest])
+    
 
     const newPasswordRequest = async () => {
-        const request = JSON.stringify({password: newPassword});
-
+        console.log(idValue);
+        const request = JSON.stringify({loginId: idValue, password: newPassword});
         try {
             const response = await axios({
                 method: 'put',
@@ -67,14 +94,33 @@ function NewPasswordForm() {
                 }
             }
         }catch (error) {
-            Swal.fire({
-                title: '비밀번호 변경 실패!',
-                text: '비밀번호 변경에 실패했습니다. 다시 시도해주세요.',
-                icon: 'error',
-                confirmButtonText: '확인'
-            })
+            if (error.response.status == 400) {
+                Swal.fire({
+                    title: '비밀번호 변경 실패!',
+                    text: error.response.data,
+                    icon: 'error',
+                    confirmButtonText: '확인'
+                })
+            } else {
+                Swal.fire({
+                    title: '비밀번호 변경 실패!',
+                    text: '서버와의 통신에 실패했습니다. 다시 시도해주세요.',
+                    icon: 'error',
+                    confirmButtonText: '확인'
+                })
+            }
+           
         }
     }
+
+    useEffect(() => {
+        if (isButtonClicked) {
+            newPasswordRequest();
+        }
+        return () => {
+            setIsButtonClicked(false);
+        }
+    }, [newPasswordRequest, isButtonClicked])
 
     return (
         <div className="flex flex-col flex-1 items-center mt-32 font-Jua">

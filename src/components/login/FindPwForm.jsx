@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
 import Swal from "sweetalert2";
+import { IdAtom } from "../../recoil/atoms/LoginAtoms";
 
 function FindPwForm({children, ...props}) {
 
@@ -9,6 +11,7 @@ function FindPwForm({children, ...props}) {
     const [emailInput, setEmailInput] = useState();
     const [isButtonClicked, setIsButtonClicked] = useState(false);
     const navigate = useNavigate();
+    const setIdValue = useSetRecoilState(IdAtom);
 
     const handleIdInput = (e) => {
         setIdInput(e.target.value);
@@ -43,6 +46,7 @@ function FindPwForm({children, ...props}) {
             })
 
             if (response.status == 200) {
+                setIdValue(idInput);
                 Swal.showLoading(Swal.getDenyButton());
                 const result = await Swal.fire({
                     title: '비밀번호 찾기 성공!',

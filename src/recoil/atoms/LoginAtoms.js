@@ -9,3 +9,8 @@ export const LoginFormAtom  = atom({
     }
 })
 
+export const IdAtom = atom({
+    key: 'idAtom',
+    default: ''
+})
+

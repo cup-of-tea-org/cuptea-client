@@ -17,9 +17,6 @@ function LoginForm() {
     const loginDataReset = useResetRecoilState(LoginFormAtom);
     const navigate = useNavigate();
     const [loginTrigger, setLoginTrigger] = useState(false);
-    const idPwCheckRef = useRef();
-
-    
 
     const loginSubmit = async () => {
         const loginRequest = JSON.stringify(loginData);
@@ -32,7 +29,6 @@ function LoginForm() {
                     'Content-Type': 'application/json'
                 }
             })
-
             if (response.status == 200) {
                 Swal.fire({
                     title: '로그인 성공!',
@@ -41,12 +37,10 @@ function LoginForm() {
                     timer: 2000,
                 });
                 
+                // 헤더에 토큰 삽입
+                axios.defaults.headers.common['Authorization'] = `${response.data.token}`
+                navigate('/');
                 loginDataReset();
-                setLoginTrigger(prev => {
-                    return !prev;
-                });
-                navigate('/')
-                // axios.defaults.headers.common['Authorization'] = `${response.data}`
             } 
 
         } catch (error) {
@@ -56,23 +50,22 @@ function LoginForm() {
                 icon: 'error',
                 confirmButtonText: '확인'
             })
-
-            setLoginTrigger(prev => {
-                return !prev;
-            });
-
-            return;
         }
     }
 
     useEffect(() => {
         if (loginTrigger) {
+            console.log('loginTrigger');
             loginSubmit();
+        }
+        return () => {
+           setLoginTrigger(false);   
         }
     }, [loginSubmit])
 
     // input validation
     const handleLoginButton = () => {
+        console.log('handleLoginButton');
         const regex = /^[a-zA-Z0-9]+$/;
         if (loginData.loginId == '' && !regex.test(loginData.loginId)) {
             Swal.fire({
@@ -92,18 +85,14 @@ function LoginForm() {
             return;
         }
 
-        setLoginTrigger(prev => {
-            return !prev;
-        });
+        setLoginTrigger(true);
     }
 
     const handleForgotIdPasswordButton = () => {
         navigate('/login/findUser');
     }
 
-    const handleCloseDialog = () => {
-        idPwCheckRef.current.close();
-    }
+ 
 
 
     return (

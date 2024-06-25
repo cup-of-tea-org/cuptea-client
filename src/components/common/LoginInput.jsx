@@ -63,9 +63,9 @@ function LoginInput({children, ...props}) {
                     }
                     break;
             }
-        } else if (props.login === 'id') { // login인 경우
+        } else if (props.login == 'id') { // login인 경우
             setLoginFormData({loginId : ref.current.value});
-        } else if (props.login === 'password') {
+        } else if (props.login == 'password') {
             setLoginFormData({password : ref.current.value});        
         }
 }
@@ -114,10 +114,8 @@ function LoginInput({children, ...props}) {
     const handleEnterKey = (e) => {
         if (props.login === 'password') {
             if (e.key === 'Enter') {
-                props.setLoginTrigger(prev => {
-                    return !prev;
-                
-                })
+                setLoginFormData({password : ref.current.value});  
+                props.setLoginTrigger(true);
             }
         }
     }
