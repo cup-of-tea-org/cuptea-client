@@ -12,7 +12,7 @@ function MainLayout() {
 
     useEffect(() => {
         // 임시 => 추후 홈 페이지에 불러올 데이터가 있을 경우 헤더에 토큰을 넣어서 서버로 보낸 후 유효기간 검증
-        if (token == null) {
+        if (token == undefined) {
             navigate("/login");
         }
     },[])

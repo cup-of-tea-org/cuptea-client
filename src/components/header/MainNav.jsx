@@ -46,7 +46,6 @@ function MainNav() {
                     <Menu img={alarmImg} key={'alarm'} >알람</Menu>
                     <Menu img={addUserImg} key={'addUser'} link={':id/friends'}>친구 추가</Menu>
                 </ul>
-
             </div>
             {isModal && <MenuModal />}
             <div className='flex flex-1 text-sm my-12 mt-32 justify-start ml-12 w-full invisible sm:visible'>
