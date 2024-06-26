@@ -7,7 +7,7 @@ function LoginButton({children, ...props}) {
                 <button 
                     type="button" 
                     className="w-full" 
-                    onClick={props.handleClick}>
+                    onClick={() => props.handleClick(props.socialType)}>
                     {props.login == 'social' ?
                     <img src={props.img} className="w-60 object-cover inline h-10"/>
                         : <div></div>

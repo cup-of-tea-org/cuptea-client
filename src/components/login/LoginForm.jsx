@@ -10,7 +10,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { LoginFormAtom, TokenAtom } from '../../recoil/atoms/LoginAtoms';
 import { loginSelector } from '../../recoil/selectors/LoginSelectors.js';
-import { useCookies } from 'react-cookie';
 
 function LoginForm() {
 
@@ -18,8 +17,9 @@ function LoginForm() {
     const loginDataReset = useResetRecoilState(LoginFormAtom);
     const navigate = useNavigate();
     const [loginTrigger, setLoginTrigger] = useState(false);
-    const [cookie, setCookie] = useCookies(['token']);
     const setToken = useSetRecoilState(TokenAtom);
+    const [socialType, setSocialType] = useState();
+    
 
     const loginSubmit = async () => {
         const loginRequest = JSON.stringify(loginData);
@@ -112,15 +112,16 @@ function LoginForm() {
         setLoginTrigger(true);
     }
 
-    const handleSocialLoginButton = () => {
-        
+    const handleSocialLoginButton = (socialType) => {
+        //TODO
+        socialType == 'kakao' ? 
+        window.location.href = 'http://localhost:8080/oauth2/authorization/kakao' : 
+        window.location.href = 'http://localhost:8080/oauth2/authorization/google';
     }
 
     const handleForgotIdPasswordButton = () => {
         navigate('/login/findUser');
     }
-
- 
 
 
     return (
@@ -130,8 +131,8 @@ function LoginForm() {
             {/* <DefaultCheckBox>로그인 유지</DefaultCheckBox> */}
             <LoginButton css={loginMainButtonCss} ifTrue={false} login={'login'} handleClick={handleLoginButton}>로그인</LoginButton>
             <LoginButton css={idPwCss} ifTrue={false} login={'findIdPassword'} handleClick={handleForgotIdPasswordButton}>비밀번호를 잊으셨나요?</LoginButton>
-            <LoginButton css={kakao} img={kakaoPhoto} login={'social'} kakao={'kakao'} handleClick={handleSocialLoginButton}></LoginButton>
-            <LoginButton css={google} img={googlePhoto} login={'social'} google={'google'}></LoginButton>
+            <LoginButton css={kakao} img={kakaoPhoto} login={'social'} socialType={'kakao'} handleClick={handleSocialLoginButton}></LoginButton>
+            <LoginButton css={google} img={googlePhoto} login={'social'} socialType={'google'}></LoginButton>
         </form>
     )
 }

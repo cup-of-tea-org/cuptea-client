@@ -108,7 +108,7 @@ const router = createBrowserRouter([
         element: <FindIdPwPage></FindIdPwPage>
       },
     ]
-  }
+  },
 ])
 
 
