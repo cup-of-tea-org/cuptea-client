@@ -2,14 +2,15 @@ import kakaoPhoto from '../../../public/kakao.png'
 import googlePhoto from '../../../public/google.png'
 import LoginInput from "../common/LoginInput";
 import { loginMainButtonCss, idPwCss, kakao, google } from "../../css/LoginCss";
-import { useRecoilValue, useResetRecoilState } from "recoil";
+import { useRecoilValue, useResetRecoilState, useSetRecoilState } from "recoil";
 import LoginButton from "./LoginButton";
 import { useEffect, useCallback, useState, useRef } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { LoginFormAtom } from '../../recoil/atoms/LoginAtoms';
+import { LoginFormAtom, TokenAtom } from '../../recoil/atoms/LoginAtoms';
 import { loginSelector } from '../../recoil/selectors/LoginSelectors.js';
+import { useCookies } from 'react-cookie';
 
 function LoginForm() {
 
@@ -17,6 +18,8 @@ function LoginForm() {
     const loginDataReset = useResetRecoilState(LoginFormAtom);
     const navigate = useNavigate();
     const [loginTrigger, setLoginTrigger] = useState(false);
+    const [cookie, setCookie] = useCookies(['token']);
+    const setToken = useSetRecoilState(TokenAtom);
 
     const loginSubmit = async () => {
         const loginRequest = JSON.stringify(loginData);
@@ -38,19 +41,36 @@ function LoginForm() {
                 });
                 
                 // 헤더에 토큰 삽입
-                axios.defaults.headers.common['Authorization'] = `${response.data.token}`
+                axios.defaults.headers.common['Authorization'] = `${response.data.token}`;
+                // 전역 객체에 토큰 저장
+                setToken(response.data.token);
                 navigate('/');
                 loginDataReset();
             } 
 
         } catch (error) {
+            console.log(error);
+            if (error.response.status == 400) {
+                Swal.fire({
+                    title: '로그인 실패!',
+                    text: error.response.data.message,
+                    icon: 'error',
+                    confirmButtonText: '확인'
+                })
+
+                return;
+            }
             Swal.fire({
                 title: '로그인 실패!',
-                text: error.response.data.message,
+                text: '서버 오류입니다. 잠시 후 다시 시도해주세요',
                 icon: 'error',
                 confirmButtonText: '확인'
-            })
+            })       
         }
+    }
+
+    const socialLoginSubmit = async () => {
+        
     }
 
     useEffect(() => {
@@ -62,6 +82,10 @@ function LoginForm() {
            setLoginTrigger(false);   
         }
     }, [loginSubmit])
+
+    useEffect(() => {
+        // const request = axios.
+    }, [])
 
     // input validation
     const handleLoginButton = () => {
@@ -88,6 +112,10 @@ function LoginForm() {
         setLoginTrigger(true);
     }
 
+    const handleSocialLoginButton = () => {
+        
+    }
+
     const handleForgotIdPasswordButton = () => {
         navigate('/login/findUser');
     }
@@ -102,7 +130,7 @@ function LoginForm() {
             {/* <DefaultCheckBox>로그인 유지</DefaultCheckBox> */}
             <LoginButton css={loginMainButtonCss} ifTrue={false} login={'login'} handleClick={handleLoginButton}>로그인</LoginButton>
             <LoginButton css={idPwCss} ifTrue={false} login={'findIdPassword'} handleClick={handleForgotIdPasswordButton}>비밀번호를 잊으셨나요?</LoginButton>
-            <LoginButton css={kakao} img={kakaoPhoto} login={'social'} kakao={'kakao'}></LoginButton>
+            <LoginButton css={kakao} img={kakaoPhoto} login={'social'} kakao={'kakao'} handleClick={handleSocialLoginButton}></LoginButton>
             <LoginButton css={google} img={googlePhoto} login={'social'} google={'google'}></LoginButton>
         </form>
     )
