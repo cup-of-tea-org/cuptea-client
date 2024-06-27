@@ -12,6 +12,7 @@ function MainLayout() {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
 
+    // token
     useEffect(() => {
         console.log(token);
         const queryStringToken = searchParams.get('token');
