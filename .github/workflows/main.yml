@@ -96,6 +96,5 @@ jobs:
 
             sudo docker run -p ${{ secrets.PORT }}:${{ secrets.PORT }} \
             --name ${{ secrets.PROJECT_NAME }} \
-            --restart=always \ 
             -d ${{secrets.EC2_HOST}}:5000/${{ secrets.PROJECT_NAME }}:latest
 
