@@ -12,7 +12,7 @@ function MainLayout() {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
 
-    // token validation
+    // token validation on page load
     useEffect(() => {
         console.log(token);
         const queryStringToken = searchParams.get('token');
