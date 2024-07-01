@@ -143,7 +143,7 @@ function JoinForm() {
             const jsonRequest = JSON.stringify(idValue);
             const response =  await axios({
                 method: 'post',
-                url: 'http://52.79.137.212:9090/service-api/open-api/user/validate-id',
+                url: 'http://52.79.137.212:80/service-api/open-api/user/validate-id',
                 data: jsonRequest, 
                 headers: {
                     "Content-Type": "application/json",
