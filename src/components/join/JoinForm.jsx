@@ -190,7 +190,7 @@ function JoinForm() {
             const email = JSON.stringify(emailValue);
             const response = await axios({
                 method: 'post',
-                url: 'http://52.79.137.212:9090/service-api/open-api/user/validate-email',
+                url: 'http://52.79.137.212:80/service-api/open-api/user/validate-email',
                 data: email,
                 headers: {
                     'Content-Type': 'application/json',
@@ -229,7 +229,7 @@ function JoinForm() {
             console.log(request)
             const response = await axios({
                 method: 'post',
-                url: 'http://52.79.137.212:9090/service-api/open-api/user/validate-email-code',
+                url: 'http://52.79.137.212:80/service-api/open-api/user/validate-email-code',
                 data: request,
                 headers: {
                     'Content-Type': 'application/json',

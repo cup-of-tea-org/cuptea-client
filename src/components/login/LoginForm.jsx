@@ -26,7 +26,7 @@ function LoginForm() {
         try {
             const response = await axios({
                 method: 'post',
-                url: 'http://52.79.137.212:9090/service-api/open-api/login',
+                url: 'http://52.79.137.212:80/service-api/open-api/login',
                 data: loginRequest,
                 headers: {
                     'Content-Type': 'application/json'
