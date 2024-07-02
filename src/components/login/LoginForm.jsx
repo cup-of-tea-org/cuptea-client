@@ -116,7 +116,7 @@ function LoginForm() {
         //TODO
         socialType == 'kakao' ? 
         window.location.href = 'http://cuptea.site/oauth2/authorization/kakao' : 
-        window.location.href = 'http://cuptea.site/oauth2/authorization/google';
+        window.location.href = 'http://cuptea.site/oauth2/authorization/google'
     }
 
     const handleForgotIdPasswordButton = () => {
