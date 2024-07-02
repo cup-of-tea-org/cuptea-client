@@ -65,7 +65,7 @@ function JoinForm() {
                 console.log(joinFormData);
                 const request = await axios({
                     method: 'post',
-                    url: 'http://52.79.137.212:9090/service-api/open-api/user',
+                    url: 'http://52.79.137.212:80/service-api/open-api/user',
                     data: requestBody,
                     headers: {
                         'Content-Type': 'multipart/form-data',

@@ -115,8 +115,8 @@ function LoginForm() {
     const handleSocialLoginButton = (socialType) => {
         //TODO
         socialType == 'kakao' ? 
-        window.location.href = 'http://52.79.137.212:8080/oauth2/authorization/kakao' : 
-        window.location.href = 'http://52.79.137.212:8080/oauth2/authorization/google';
+        window.location.href = 'http://cuptea.site:8080/oauth2/authorization/kakao' : 
+        window.location.href = 'http://cuptea.site:8080/oauth2/authorization/google';
     }
 
     const handleForgotIdPasswordButton = () => {
