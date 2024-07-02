@@ -139,6 +139,7 @@ function JoinForm() {
 
     // 아이디 중복 검사
     async function sendIdOverlap() {
+        Swal.showLoading(Swal.getDenyButton());
         try {
             const jsonRequest = JSON.stringify(idValue);
             const response =  await axios({
@@ -151,6 +152,7 @@ function JoinForm() {
             })
 
             if (response.status == 200) {
+                Swal.close();
                 Swal.fire({
                     icon: 'success',
                     title: '사용가능한 아이디입니다.',
@@ -163,7 +165,6 @@ function JoinForm() {
                 });
             } 
         }catch (error) {
-
             if (error.response.status == 500) {
                 Swal.fire({
                     icon: 'error',
