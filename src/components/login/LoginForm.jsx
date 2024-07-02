@@ -132,7 +132,7 @@ function LoginForm() {
             <LoginButton css={loginMainButtonCss} ifTrue={false} login={'login'} handleClick={handleLoginButton}>로그인</LoginButton>
             <LoginButton css={idPwCss} ifTrue={false} login={'findIdPassword'} handleClick={handleForgotIdPasswordButton}>비밀번호를 잊으셨나요?</LoginButton>
             <LoginButton css={kakao} img={kakaoPhoto} login={'social'} socialType={'kakao'} handleClick={handleSocialLoginButton}></LoginButton>
-            <LoginButton css={google} img={googlePhoto} login={'social'} socialType={'google'}></LoginButton>
+            <LoginButton css={google} img={googlePhoto} login={'social'} socialType={'google'} handleClick={handleSocialLoginButton}></LoginButton>
         </form>
     )
 }
