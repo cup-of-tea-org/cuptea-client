@@ -38,7 +38,7 @@ function FindPwForm({children, ...props}) {
             Swal.showLoading(Swal.getDenyButton())
             const response = await axios({
                 method: 'post',
-                url: 'http://localhost:9090/service-api/open-api/user/password',
+                url: 'http://52.79.137.212:80/service-api/open-api/user/password',
                 data: request,
                 headers: {
                     'Content-Type': 'application/json'
