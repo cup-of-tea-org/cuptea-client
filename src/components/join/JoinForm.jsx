@@ -65,7 +65,7 @@ function JoinForm() {
                 console.log(joinFormData);
                 const request = await axios({
                     method: 'post',
-                    url: 'http://52.79.137.212:80/service-api/open-api/user',
+                    url: 'http://cuptea.site/service-api/open-api/user',
                     data: requestBody,
                     headers: {
                         'Content-Type': 'multipart/form-data',
@@ -144,7 +144,7 @@ function JoinForm() {
             const jsonRequest = JSON.stringify(idValue);
             const response =  await axios({
                 method: 'post',
-                url: 'http://52.79.137.212:80/service-api/open-api/user/validate-id',
+                url: 'http://cuptea.site/service-api/open-api/user/validate-id',
                 data: jsonRequest, 
                 headers: {
                     "Content-Type": "application/json",
@@ -191,7 +191,7 @@ function JoinForm() {
             const email = JSON.stringify(emailValue);
             const response = await axios({
                 method: 'post',
-                url: 'http://52.79.137.212:80/service-api/open-api/user/validate-email',
+                url: 'http://cuptea.site/service-api/open-api/user/validate-email',
                 data: email,
                 headers: {
                     'Content-Type': 'application/json',
@@ -230,7 +230,7 @@ function JoinForm() {
             console.log(request)
             const response = await axios({
                 method: 'post',
-                url: 'http://52.79.137.212:80/service-api/open-api/user/validate-email-code',
+                url: 'http://cuptea.site/service-api/open-api/user/validate-email-code',
                 data: request,
                 headers: {
                     'Content-Type': 'application/json',
